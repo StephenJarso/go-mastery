@@ -117,3 +117,87 @@ In Go, you mock behavior using **Interfaces** and **Manual Test Doubles**. If a 
 // Production interface
 type EmailSender interface {
     SendEmail(to, body string) error
+}
+
+// Test Mock (Test Double)
+type MockEmailSender struct {
+    LastTo   string
+    LastBody string
+    MockErr  error
+}
+
+func (m *MockEmailSender) SendEmail(to, body string) error {
+    m.LastTo = to
+    m.LastBody = body
+    return m.MockErr
+}
+```
+This is fully type-safe, compile-time verified, and requires no reflection magic.
+
+#### 🌐 Testing HTTP Handlers (`net/http/httptest`)
+Go provides the `net/http/httptest` package to test web servers and clients without opening actual TCP network sockets.
+
+##### 1. Testing Handlers with `ResponseRecorder`
+`httptest.NewRecorder()` acts as a fake browser connection. It records response codes, headers, and body writes:
+```go
+req := httptest.NewRequest("GET", "/hello", nil)
+w := httptest.NewRecorder()
+
+HelloHandler(w, req) // Call HTTP handler directly
+
+resp := w.Result()
+if resp.StatusCode != http.StatusOK {
+    t.Errorf("Expected 200, got %d", resp.StatusCode)
+}
+```
+
+##### 2. Testing HTTP Clients with `httptest.NewServer`
+`httptest.NewServer` spins up a real local test server on a random loopback port. You feed this test server's URL to your HTTP client config, allowing you to test real HTTP client exchanges (including connection handshakes and query parameters) in isolation.
+
+---
+
+### 4. Code Quality & Static Analysis
+
+Go enforces code quality and style directly in the toolchain.
+
+* **Formatting (`gofmt`)**: Go has a single standard code layout. Running `gofmt -w file.go` automatically formats your code, ending all style arguments (braces placement, spacing, etc.).
+* **Static Analysis (`go vet`)**: Inspects code for suspicious structures that compilation might miss, such as mismatched printf tags or unreachable code.
+* **Linting (`staticcheck`)**: The industry standard for linting Go code, catching performance issues, bugs, and stylistic violations.
+
+---
+
+## 🗂️ Phase 6 Code Directory Structure
+
+* **[01-unit-testing/](file:///home/sjarso/go-mastery/phase-6-testing/01-unit-testing)**: Learn standard testing patterns.
+  * [basics.go](file:///home/sjarso/go-mastery/phase-6-testing/01-unit-testing/basics.go) & [basics_test.go](file:///home/sjarso/go-mastery/phase-6-testing/01-unit-testing/basics_test.go): Basic test definitions and testing helpers.
+  * [table_driven.go](file:///home/sjarso/go-mastery/phase-6-testing/01-unit-testing/table_driven.go) & [table_driven_test.go](file:///home/sjarso/go-mastery/phase-6-testing/01-unit-testing/table_driven_test.go): Creating parameter-driven tests and subtests.
+  * [practice.go](file:///home/sjarso/go-mastery/phase-6-testing/01-unit-testing/practice.go) & [practice_test.go](file:///home/sjarso/go-mastery/phase-6-testing/01-unit-testing/practice_test.go): Exercises covering slice aggregations and validations.
+* **[02-benchmarking/](file:///home/sjarso/go-mastery/phase-6-testing/02-benchmarking)**: Performance measurements.
+  * [concat.go](file:///home/sjarso/go-mastery/phase-6-testing/02-benchmarking/concat.go) & [concat_test.go](file:///home/sjarso/go-mastery/phase-6-testing/02-benchmarking/concat_test.go): Benchmarking raw string concat vs `strings.Builder`.
+  * [practice.go](file:///home/sjarso/go-mastery/phase-6-testing/02-benchmarking/practice.go) & [practice_test.go](file:///home/sjarso/go-mastery/phase-6-testing/02-benchmarking/practice_test.go): Optimizing slice filtering structures.
+* **[03-advanced-testing/](file:///home/sjarso/go-mastery/phase-6-testing/03-advanced-testing)**: Mocking and network tests.
+  * [mocking.go](file:///home/sjarso/go-mastery/phase-6-testing/03-advanced-testing/mocking.go) & [mocking_test.go](file:///home/sjarso/go-mastery/phase-6-testing/03-advanced-testing/mocking_test.go): Designing interface-based test doubles.
+  * [http_handler.go](file:///home/sjarso/go-mastery/phase-6-testing/03-advanced-testing/http_handler.go) & [http_handler_test.go](file:///home/sjarso/go-mastery/phase-6-testing/03-advanced-testing/http_handler_test.go): Testing standard HTTP endpoints via `httptest.ResponseRecorder`.
+  * [practice.go](file:///home/sjarso/go-mastery/phase-6-testing/03-advanced-testing/practice.go) & [practice_test.go](file:///home/sjarso/go-mastery/phase-6-testing/03-advanced-testing/practice_test.go): Mocking user storage databases and verifying API payloads.
+
+---
+
+## 🚀 How to Run the Code
+
+To run unit tests in a specific folder:
+```bash
+cd phase-6-testing/01-unit-testing
+go test -v
+```
+
+To run benchmarks in a folder:
+```bash
+cd phase-6-testing/02-benchmarking
+go test -bench=. -benchmem
+```
+
+To run a test coverage check:
+```bash
+go test -coverprofile=coverage.out ./...
+go tool cover -html=coverage.out
+```
