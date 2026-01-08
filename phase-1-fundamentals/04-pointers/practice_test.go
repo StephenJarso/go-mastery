@@ -6,7 +6,7 @@ import (
 
 func TestIncrement(t *testing.T) {
 	x := 10
-	
+
 	// Value increment (no change)
 	IncrementByValue(x)
 	if x != 10 {

@@ -40,7 +40,7 @@ func TestMakeMultiplier(t *testing.T) {
 
 func TestFilter(t *testing.T) {
 	nums := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
-	
+
 	// Test case: filter even numbers
 	even := Filter(nums, func(x int) bool {
 		return x%2 == 0
