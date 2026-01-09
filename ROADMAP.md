@@ -2,6 +2,36 @@
 
 Use this document to track your progress through each phase. Check off items as you complete them!
 
+## Phase 1: Go Fundamentals
+**Estimated Duration:** 1-2 weeks  
+**Status:** 🟢 Completed
+
+### Variables & Types
+- [x] Declaring variables using `var` and short declaration operator `:=`
+- [x] Constants, type conversions, and zero values
+- [x] Numeric types, booleans, and strings
+- [x] Completed: `phase-1-fundamentals/01-variables-types/`
+
+### Control Flow
+- [x] Conditional expressions (if/else if/else)
+- [x] Loops in Go (the single standard `for` statement)
+- [x] Multi-case switch statements
+- [x] Completed: `phase-1-fundamentals/02-control-flow/`
+
+### Functions
+- [x] Parameters, return types, and multiple return values
+- [x] Named return parameters
+- [x] Closures and anonymous functions
+- [x] Completed: `phase-1-fundamentals/03-functions/`
+
+### Pointers & Collections
+- [x] Address-of operator `&` and dereference operator `*`
+- [x] Value semantics vs. pointer semantics
+- [x] Array, slice, and map headers
+- [x] Completed: `phase-1-fundamentals/04-pointers/`
+
+---
+
 ## Phase 2: Object-Oriented & Functional Concepts
 **Estimated Duration:** 2-3 weeks  
 **Status:** 🟢 Completed
