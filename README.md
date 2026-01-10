@@ -1,11 +1,12 @@
 # Go Mastery 🚀
 
-A comprehensive, hands-on learning repository for mastering Go programming language from **Phase 2 onwards**. This repo is structured as a progressive journey from Object-Oriented & Functional concepts through Advanced Features, with working code examples, tests, and real-world projects.
+A comprehensive, hands-on learning repository for mastering Go programming language from the fundamentals onwards. This repo is structured as a progressive journey from Object-Oriented & Functional concepts through Advanced Features, with working code examples, tests, and real-world projects.
 
 ## 📚 What's Inside
 
 This repository covers:
 
+- **Phase 1:** Go Fundamentals (Variables, Control Flow, Functions, Pointers & Collections)
 - **Phase 2:** Object-Oriented & Functional Concepts (Structs, Methods, Interfaces, Packages)
 - **Phase 3:** Advanced Language Features (Concurrency, Reflection, Generics, Error Handling)
 - **Phase 4:** I/O, Networking & Web Development
@@ -15,9 +16,11 @@ This repository covers:
 
 ## 🎯 Learning Path
 
-Each phase builds on the previous one. Start with Phase 2 and progress sequentially:
+Each phase builds on the previous one. Start with Phase 1 and progress sequentially:
 
 ```
+Phase 1: Variables → Control Flow → Functions → Pointers
+    ↓
 Phase 2: Structs → Methods → Interfaces → Packages → Modules
     ↓
 Phase 3: Goroutines → Channels → Patterns → Reflection → Generics
@@ -39,6 +42,13 @@ go-mastery/
 ├── ROADMAP.md                         # Phase progression tracker
 ├── resources.md                       # Learning resources & references
 ├── .gitignore
+│
+├── phase-1-fundamentals/              # Variables, Loops, Functions, Pointers
+│   ├── 01-variables-types/
+│   ├── 02-control-flow/
+│   ├── 03-functions/
+│   ├── 04-pointers/
+│   └── README.md
 │
 ├── phase-2-oop-functional/            # Structs, Methods, Interfaces
 │   ├── 01-structs/
@@ -223,7 +233,8 @@ go test -v ./...         # Run all tests recursively
 
 | Phase | Duration | Status |
 |-------|----------|--------|
-| Phase 2 | 2-3 weeks | 📚 Learning |
+| Phase 1 | 1-2 weeks | 🟢 Completed |
+| Phase 2 | 2-3 weeks | 🟢 Completed |
 | Phase 3 | 3-4 weeks | 📚 Coming Soon |
 | Phase 4 | 4-5 weeks | 📚 Coming Soon |
 | Phase 5 | 3-4 weeks | 📚 Coming Soon |
@@ -260,8 +271,8 @@ MIT License - Feel free to use this repository for learning and teaching.
 ## 🎯 Next Steps
 
 1. ✅ You're reading this file
-2. → Start with `phase-2-oop-functional/README.md`
-3. → Work through `01-structs/` examples
+2. → Start with `phase-1-fundamentals/README.md`
+3. → Work through `01-variables-types/` examples
 4. → Progress through each topic sequentially
 5. → Check off items in `ROADMAP.md`
 6. → Build projects to apply learning
@@ -270,4 +281,4 @@ MIT License - Feel free to use this repository for learning and teaching.
 
 **Happy Learning! 🚀**
 
-*Last Updated: June 2026*
+*Last Updated: July 2026*
