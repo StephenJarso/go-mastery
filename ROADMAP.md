@@ -324,7 +324,7 @@ Use this document to track your progress through each phase. Check off items as 
 
 ## Tips for Using This Roadmap
 
-1. **Start at Phase 2** - You likely know Phase 1 (fundamentals)
+1. **Start at Phase 1** - Master the fundamentals first
 2. **Check off as you go** - Celebrate small wins
 3. **Don't skip items** - Each builds on previous knowledge
 4. **Do the code exercises** - Reading isn't enough
