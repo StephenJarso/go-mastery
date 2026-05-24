@@ -1,27 +1,34 @@
 package controlflow
 
-// PRACTICE EXERCISE: FizzBuzz
-// Implement a function that processes numbers from start to end (inclusive)
-// and returns a slice of strings with the following replacements:
-// - If the number is divisible by 3, replace it with "Fizz".
-// - If the number is divisible by 5, replace it with "Buzz".
-// - If the number is divisible by both 3 and 5, replace it with "FizzBuzz".
-// - Otherwise, convert the number to its string representation (e.g. "4").
+import (
+	"strconv"
+)
 
-import "strconv"
 
+var _ = strconv.Itoa
+
+// Exercise 1: FizzBuzz
+// Implement FizzBuzz from start to end (inclusive).
+// - Divisible by 3 -> "Fizz"
+// - Divisible by 5 -> "Buzz"
+// - Divisible by 3 and 5 -> "FizzBuzz"
+// - Otherwise, string representation.
 func FizzBuzz(start, end int) []string {
-	result := make([]string, 0, end-start+1)
-	for i := start; i <= end; i++ {
-		if i%3 == 0 && i%5 == 0 {
-			result = append(result, "FizzBuzz")
-		} else if i%3 == 0 {
-			result = append(result, "Fizz")
-		} else if i%5 == 0 {
-			result = append(result, "Buzz")
-		} else {
-			result = append(result, strconv.Itoa(i))
-		}
-	}
-	return result
+	// TODO: Implement
+	return nil
+}
+
+// Exercise 2: Find Primes
+// Return all prime numbers up to limit (inclusive).
+// A prime is a number greater than 1 with no divisors other than 1 and itself.
+func FindPrimes(limit int) []int {
+	// TODO: Implement
+	return nil
+}
+
+// Exercise 3: Character Frequency Counter
+// Count the occurrences of each rune in string s.
+func CountCharFrequency(s string) map[rune]int {
+	// TODO: Implement
+	return nil
 }
