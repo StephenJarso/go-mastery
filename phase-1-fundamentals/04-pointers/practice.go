@@ -4,16 +4,29 @@ import (
 	"errors"
 )
 
-// PRACTICE EXERCISE: Safe Swapper
-// Write a function Swap that swaps the values of two integers using pointers.
-// If either pointer is nil, return an error.
 
-func Swap(a, b *int) error {
-	if a == nil || b == nil {
-		return errors.New("cannot swap nil pointers")
-	}
-	temp := *a
-	*a = *b
-	*b = temp
+var _ = errors.New
+
+type Student struct {
+	Name  string
+	Grade float64
+}
+
+// Exercise 1: Safe Swap
+// Swap the values of two integer pointers in place.
+func Swap(a, b *int) {
+	// TODO: Implement
+}
+
+// Exercise 2: Increment Counter
+// Increment the integer value pointed to by val by the specified amount.
+func IncrementCounter(val *int, amount int) {
+	// TODO: Implement
+}
+
+// Exercise 3: Update Student Grade
+// Update the student's grade through a pointer. Returns error if newGrade is not between 0.0 and 100.0.
+func UpdateGrade(s *Student, newGrade float64) error {
+	// TODO: Implement
 	return nil
 }
