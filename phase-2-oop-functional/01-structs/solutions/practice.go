@@ -1,13 +1,11 @@
-package main
+package solutions
 
 import (
 	"errors"
 	"encoding/json"
+	"fmt"
 )
 
-
-var _ = errors.New
-var _ = json.Marshal
 
 type Book struct {
 	ID        int
@@ -44,24 +42,36 @@ type Product struct {
 	Price float64 `json:"price"`
 }
 
-// Exercise 1: Borrow a Book
-// Set Available to false on the Book pointer and return a success message.
-// If the book is already borrowed, return an error.
 func BorrowBook(book *Book) (string, error) {
-	// TODO: Implement
-	return "", nil
+	if book == nil {
+		return "", errors.New("nil book pointer")
+	}
+	if !book.Available {
+		return "", errors.New("book is already borrowed")
+	}
+	book.Available = false
+	return fmt.Sprintf("You have successfully borrowed %q.", book.Title), nil
 }
 
-// Exercise 2: New Employee Constructor
-// Return a new Employee struct initialized with composition.
 func NewEmployee(name string, age int, city, state string, id int, pos string) Employee {
-	// TODO: Implement
-	return Employee{}
+	return Employee{
+		Person: Person{
+			Name: name,
+			Age:  age,
+			Address: Address{
+				City:  city,
+				State: state,
+			},
+		},
+		ID:       id,
+		Position: pos,
+	}
 }
 
-// Exercise 3: Product to JSON
-// Convert a Product struct instance to its JSON string representation.
 func ToJSON(p Product) (string, error) {
-	// TODO: Implement
-	return "", nil
+	bytes, err := json.Marshal(p)
+	if err != nil {
+		return "", err
+	}
+	return string(bytes), nil
 }
