@@ -55,29 +55,29 @@ func MutexExample() {
 	fmt.Printf("Final Counter Value (expected 1000): %d\n", counter.Value())
 }
 
-// SafeMap represents a thread-safe map protected by sync.RWMutex.
+// ExampleSafeMap represents a thread-safe map protected by sync.RWMutex.
 // sync.RWMutex allows any number of readers OR exactly one writer, which is
 // highly efficient for read-heavy workloads.
-type SafeMap struct {
+type ExampleSafeMap struct {
 	mu   sync.RWMutex
 	data map[string]string
 }
 
-func NewSafeMap() *SafeMap {
-	return &SafeMap{
+func NewExampleSafeMap() *ExampleSafeMap {
+	return &ExampleSafeMap{
 		data: make(map[string]string),
 	}
 }
 
 // Set writes a key-value pair.
-func (sm *SafeMap) Set(key, val string) {
+func (sm *ExampleSafeMap) Set(key, val string) {
 	sm.mu.Lock() // Writer lock
 	defer sm.mu.Unlock()
 	sm.data[key] = val
 }
 
 // Get reads a value by key.
-func (sm *SafeMap) Get(key string) (string, bool) {
+func (sm *ExampleSafeMap) Get(key string) (string, bool) {
 	sm.mu.RLock() // Reader lock
 	defer sm.mu.RUnlock()
 	val, ok := sm.data[key]
@@ -88,7 +88,7 @@ func (sm *SafeMap) Get(key string) (string, bool) {
 func RWMutexExample() {
 	fmt.Println("\n=== sync.RWMutex ===")
 
-	sm := NewSafeMap()
+	sm := NewExampleSafeMap()
 	sm.Set("status", "Initialized")
 
 	var wg sync.WaitGroup
