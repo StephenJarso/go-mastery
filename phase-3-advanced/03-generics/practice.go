@@ -1,69 +1,45 @@
 package generics
 
-// PRACTICE EXERCISE #1: Generic Minimum Finder
-// Implement a generic function called FindMin that accepts a slice of numeric types
-// (integers or floats) and returns the minimum value in the slice.
-// If the slice is empty, return the zero value of the type.
+import (
+	"errors"
+	"golang.org/x/exp/constraints"
+)
 
-type OrderedNumber interface {
-	int | int32 | int64 | float32 | float64
+
+var _ = errors.New
+
+// Exercise 1: Generic Map Slice
+// MapSlice transforms a slice of type T to U using function f.
+func MapSlice[T any, U any](slice []T, f func(T) U) []U {
+	// TODO: Implement
+	return nil
 }
 
-func FindMin[T OrderedNumber](slice []T) T {
+// Exercise 2: Generic Stack
+// A generic stack structure with Push, Pop, and Len methods.
+type PracticeStack[T any] struct {
+	items []T
+}
+
+func (s *PracticeStack[T]) Push(v T) {
+	// TODO: Implement
+}
+
+func (s *PracticeStack[T]) Pop() (T, error) {
+	// TODO: Implement
 	var zero T
-	if len(slice) == 0 {
-		return zero
-	}
-
-	minVal := slice[0]
-	for _, val := range slice {
-		if val < minVal {
-			minVal = val
-		}
-	}
-	return minVal
+	return zero, nil
 }
 
-// PRACTICE EXERCISE #2: Generic Set Data Structure
-// Implement a generic Set data structure called PracticeSet.
-// A set is a collection of unique elements. It should support:
-// - Add(item T)
-// - Remove(item T)
-// - Has(item T) bool
-// - Size() int
-// - List() []T (returns all elements in the set)
-
-type PracticeSet[T comparable] struct {
-	elements map[T]struct{}
+func (s *PracticeStack[T]) Len() int {
+	// TODO: Implement
+	return 0
 }
 
-func NewPracticeSet[T comparable]() *PracticeSet[T] {
-	return &PracticeSet[T]{
-		elements: make(map[T]struct{}),
-	}
-}
-
-func (s *PracticeSet[T]) Add(item T) {
-	s.elements[item] = struct{}{}
-}
-
-func (s *PracticeSet[T]) Remove(item T) {
-	delete(s.elements, item)
-}
-
-func (s *PracticeSet[T]) Has(item T) bool {
-	_, ok := s.elements[item]
-	return ok
-}
-
-func (s *PracticeSet[T]) Size() int {
-	return len(s.elements)
-}
-
-func (s *PracticeSet[T]) List() []T {
-	list := make([]T, 0, len(s.elements))
-	for key := range s.elements {
-		list = append(list, key)
-	}
-	return list
+// Exercise 3: Generic Min Finder
+// Find the smallest element in a slice of Ordered constraint types.
+func FindMin[T constraints.Ordered](slice []T) (T, error) {
+	// TODO: Implement
+	var zero T
+	return zero, nil
 }
