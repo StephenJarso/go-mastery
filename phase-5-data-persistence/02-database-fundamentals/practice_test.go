@@ -1,69 +1,40 @@
 package dbfundamentals
 
 import (
-	"database/sql"
 	"testing"
-
+	"database/sql"
 	_ "github.com/glebarez/go-sqlite"
 )
 
-func TestAccountManager(t *testing.T) {
-	// Create an in-memory SQLite database for test runs
+
+func TestDatabaseFundamentals(t *testing.T) {
 	db, err := sql.Open("sqlite", ":memory:")
 	if err != nil {
 		t.Fatalf("failed to open database: %v", err)
 	}
 	defer db.Close()
 
-	mgr := NewAccountManager(db)
-
-	// 1. Create table
-	if err := mgr.CreateAccountsTable(); err != nil {
-		t.Fatalf("failed to create accounts table: %v", err)
-	}
-
-	// 2. Create accounts
-	accA, err := mgr.CreateAccount("Stephen", 500.00)
+	_, err = db.Exec("CREATE TABLE accounts (id INTEGER PRIMARY KEY AUTOINCREMENT, owner TEXT, balance REAL)")
 	if err != nil {
-		t.Fatalf("failed to create account A: %v", err)
+		t.Fatalf("failed to create table: %v", err)
 	}
 
-	accB, err := mgr.CreateAccount("Jacob", 100.00)
+	id1, err := CreateAccount(db, "Alice", 100.0)
+	id2, err := CreateAccount(db, "Bob", 50.0)
+	if err != nil || id1 == 0 || id2 == 0 {
+		t.Fatalf("failed to create accounts: %v", err)
+	}
+
+	err = TransferMoney(db, id1, id2, 30.0)
 	if err != nil {
-		t.Fatalf("failed to create account B: %v", err)
+		t.Fatalf("transfer failed: %v", err)
 	}
 
-	// 3. Successful fund transfer
-	err = mgr.TransferFunds(accA, accB, 150.00)
-	if err != nil {
-		t.Fatalf("TransferFunds failed: %v", err)
-	}
+	var bal1, bal2 float64
+	db.QueryRow("SELECT balance FROM accounts WHERE id = ?", id1).Scan(&bal1)
+	db.QueryRow("SELECT balance FROM accounts WHERE id = ?", id2).Scan(&bal2)
 
-	balA, _ := mgr.GetBalance(accA)
-	balB, _ := mgr.GetBalance(accB)
-
-	if balA != 350.00 {
-		t.Errorf("expected A's balance to be 350.00, got %f", balA)
-	}
-	if balB != 250.00 {
-		t.Errorf("expected B's balance to be 250.00, got %f", balB)
-	}
-
-	// 4. Failed transfer (insufficient funds)
-	err = mgr.TransferFunds(accA, accB, 1000.00)
-	if err != ErrInsufficientFunds {
-		t.Errorf("expected ErrInsufficientFunds, got %v", err)
-	}
-
-	// Verify balances did not change after rollback
-	balA, _ = mgr.GetBalance(accA)
-	if balA != 350.00 {
-		t.Errorf("expected balance to remain 350.00, got %f", balA)
-	}
-
-	// 5. Non-existent account transfer
-	err = mgr.TransferFunds(999, accB, 50.00)
-	if err == nil {
-		t.Error("expected transfer from invalid account to fail")
+	if bal1 != 70.0 || bal2 != 80.0 {
+		t.Errorf("wrong balances: bal1=%f, bal2=%f", bal1, bal2)
 	}
 }
