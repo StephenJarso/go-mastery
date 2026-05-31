@@ -1,4 +1,4 @@
-package jsonprocessing
+package solutions
 
 import (
 	"encoding/json"
@@ -6,10 +6,6 @@ import (
 	"errors"
 )
 
-
-var _ = json.Marshal
-var _ = time.Now
-var _ = errors.New
 
 type Config struct {
 	AppName string `json:"app_name"`
@@ -24,16 +20,26 @@ type PracticeCustomDateConfig struct {
 	Created PracticeCustomDate `json:"created"`
 }
 
-// Exercise 1: Parse Config JSON
-// Unmarshal data into Config struct. Return error if empty field.
 func ParseConfig(data []byte) (Config, error) {
-	// TODO: Implement
-	return Config{}, nil
+	var c Config
+	if err := json.Unmarshal(data, &c); err != nil {
+		return c, err
+	}
+	if c.AppName == "" {
+		return c, errors.New("empty AppName")
+	}
+	return c, nil
 }
 
-// Exercise 2: Custom JSON Date Unmarshaling
-// Implement json.Unmarshaler on PracticeCustomDate to parse dates in format "02-01-2006".
 func (cd *PracticeCustomDate) UnmarshalJSON(b []byte) error {
-	// TODO: Implement
+	var s string
+	if err := json.Unmarshal(b, &s); err != nil {
+		return err
+	}
+	t, err := time.Parse("02-01-2006", s)
+	if err != nil {
+		return err
+	}
+	cd.Time = t
 	return nil
 }
