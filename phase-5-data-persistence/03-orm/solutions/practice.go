@@ -1,4 +1,4 @@
-package orm
+package solutions
 
 import (
 	"gorm.io/gorm"
@@ -17,16 +17,25 @@ type Order struct {
 	Amount     float64
 }
 
-// Exercise 1: Create Customer and Order
-// Create a new Customer with associated Order using GORM.
 func CreateCustomerWithOrder(db *gorm.DB, name string, orderAmount float64) (*Customer, error) {
-	// TODO: Implement
-	return nil, nil
+	cust := &Customer{
+		Name: name,
+		Orders: []Order{
+			{Amount: orderAmount},
+		},
+	}
+	err := db.Create(cust).Error
+	if err != nil {
+		return nil, err
+	}
+	return cust, nil
 }
 
-// Exercise 2: Retrieve Customer with Eager Loading
-// Retrieve Customer by ID with all associated Orders preloaded.
 func GetCustomerWithOrders(db *gorm.DB, customerID uint) (*Customer, error) {
-	// TODO: Implement
-	return nil, nil
+	var cust Customer
+	err := db.Preload("Orders").First(&cust, customerID).Error
+	if err != nil {
+		return nil, err
+	}
+	return &cust, nil
 }
