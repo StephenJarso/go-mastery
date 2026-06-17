@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"unsafe"
 )
 
 // Person is a struct that represents a person.
@@ -164,14 +165,14 @@ func CopyingStructs() {
 func StructSize() {
 	fmt.Println("\n=== Struct Size ===")
 
-	var p Person
-	fmt.Printf("Size of Person struct: %d bytes\n", unsafe(len([]byte{}))) // Would use unsafe.Sizeof in production
+	//var p Person
+	//fmt.Printf("Size of Person struct: %d bytes\n", unsafe(len([]byte{}))) // Would use unsafe.Sizeof in production
 	fmt.Printf("Size of string field: %d bytes\n", 16)                    // strings are 16 bytes
 	fmt.Printf("Size of int field: %d bytes\n", 8)                       // int64 is 8 bytes on 64-bit systems
 }
 
 // Using unsafe to show actual sizes
-import "unsafe"
+
 
 func StructSizeWithUnsafe() {
 	fmt.Println("\n=== Struct Size (with unsafe) ===")
