@@ -1,8 +1,6 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 // ValueReceiverExamples demonstrates methods with VALUE receivers.
 // Value receivers work on a COPY of the struct.
