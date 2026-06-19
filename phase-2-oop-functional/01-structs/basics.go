@@ -183,7 +183,25 @@ func StructSizeWithUnsafe() {
 	fmt.Printf("Size of Age field: %d bytes\n", unsafe.Sizeof(p.Age))
 	fmt.Printf("Size of Email field: %d bytes\n", unsafe.Sizeof(p.Email))
 }
+//To understand more about value Receiver and pointer receiver,here is a small code to explain the difference
+//value receiver- method gets a copy of the struct
+//Pointer receiver- the method gets the actual struct(can modify it)
 
+// 1.Value Receiver
+type Person1 struct{
+	Name string
+	Age int
+}
+// Her  p is a copy.If you change p.Nmae inside Greet()the original is untouched.
+func(p Person1)Greet()string{
+return "Hi,I'm "+p.Name
+}
+func(p Person1) Birthday(){
+	p.Age++
+}
+func(p *Person1) Birthday1(){
+	p.Age++
+}
 func main() {
 	// Run all examples
 	StructBasics()
@@ -196,4 +214,16 @@ func main() {
 	StructSizeWithUnsafe()
 
 	fmt.Println("\n=== All Examples Completed ===")
+
+	bob := Person1{
+		Name: "bob",
+		Age: 25,
+	}
+	bob.Birthday()
+	fmt.Println(bob.Age)// 25 -nothing changed
+
+	bob.Birthday1()
+	fmt.Println(bob.Age)// 26 - changed
 }
+
+
