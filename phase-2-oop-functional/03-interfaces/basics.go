@@ -29,7 +29,7 @@ func (c Cat) speak() string {
 	return c.Name + " says meow!"
 }
 
-//basicInterfaceUsage shows that any Speaker can be used interchangeably
+// basicInterfaceUsage shows that any Speaker can be used interchangeably
 func BasicInterfaceUsage() {
 	var s Speaker
 
@@ -40,3 +40,11 @@ func BasicInterfaceUsage() {
 	s = Cat{Name: "Whiskers"}
 	fmt.Println(s.speak())
 }
+
+// MakeItTalk accepts ANY type that satisfies Speaker.
+// This is the real power: decoupled, flexible functions
+func MakeItTalk(s Speaker) {
+	fmt.Println(s.speak())
+}
+
+// PolymorphismExample shows treating different types uniformaly through an interface
