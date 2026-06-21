@@ -48,3 +48,16 @@ func MakeItTalk(s Speaker) {
 }
 
 // PolymorphismExample shows treating different types uniformaly through an interface
+func PolymorphismExample() {
+	fmt.Println("\n=== Polymorphism via Interfaces ===")
+ 
+	animals := []Speaker{
+		Dog{Name: "Buddy"},
+		Cat{Name: "Mittens"},
+		Dog{Name: "Max"},
+	}
+ 
+	for _, a := range animals {
+		MakeItTalk(a)
+	}
+}
