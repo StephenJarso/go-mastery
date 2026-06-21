@@ -88,7 +88,7 @@ func PointerReceiverModification() {
 
 	// Multiple modifications
 	account.Deposit(200)   // 500 + 200 = 700
-	format.Printf("After deposit: $%.2f\n", account.Balance)
+	fmt.Printf("After deposit: $%.2f\n", account.Balance)
 
 	account.Withdraw(150)  // 700 - 150 = 550
 	fmt.Printf("After withdrawal: $%.2f\n", account.Balance)
