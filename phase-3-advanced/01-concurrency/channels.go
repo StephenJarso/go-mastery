@@ -1,4 +1,4 @@
-package main
+package concurrency
 
 import (
 	"fmt"
@@ -101,7 +101,7 @@ func ChannelClosingAndRange() {
 	fmt.Printf("Reading from closed channel: val = %d, ok = %t\n", val, ok)
 }
 
-func main() {
+func RunChannelsDemo() {
 	UnbufferedChannels()
 	BufferedChannels()
 	ChannelClosingAndRange()

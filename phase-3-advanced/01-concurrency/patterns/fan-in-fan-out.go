@@ -1,4 +1,4 @@
-package main
+package patterns
 
 import (
 	"fmt"
@@ -89,8 +89,4 @@ func RunFanDemo() {
 	}
 
 	fmt.Println("Finished Fan-out / Fan-in.")
-}
-
-func main() {
-	RunFanDemo()
 }

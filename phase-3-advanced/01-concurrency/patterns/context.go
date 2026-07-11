@@ -1,4 +1,4 @@
-package main
+package patterns
 
 import (
 	"context"
@@ -94,7 +94,7 @@ func ContextValues() {
 	printUserSession(context.Background()) // No value present
 }
 
-func main() {
+func RunContextDemo() {
 	ContextCancellation()
 	ContextTimeout()
 	ContextValues()

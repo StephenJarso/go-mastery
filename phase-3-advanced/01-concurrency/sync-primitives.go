@@ -1,4 +1,4 @@
-package main
+package concurrency
 
 import (
 	"fmt"
@@ -188,7 +188,7 @@ func CondExample() {
 	wg.Wait()
 }
 
-func main() {
+func RunSyncPrimitivesDemo() {
 	MutexExample()
 	RWMutexExample()
 	OnceExample()

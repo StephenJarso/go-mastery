@@ -1,4 +1,4 @@
-package main
+package concurrency
 
 import (
 	"fmt"
@@ -107,7 +107,7 @@ func DemonstrateDeadlock() {
 	}
 }
 
-func main() {
+func RunRaceDeadlockDemo() {
 	// Running DemonstrateRaceCondition shows why we need Mutex/Channels.
 	DemonstrateRaceCondition()
 	// Running DemonstrateDeadlock shows lock ordering issue.

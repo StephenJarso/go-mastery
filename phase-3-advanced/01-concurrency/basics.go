@@ -1,4 +1,4 @@
-package main
+package concurrency
 
 import (
 	"fmt"
@@ -88,7 +88,7 @@ func ClosureCaptureIssue() {
 	wg.Wait()
 }
 
-func main() {
+func RunBasicsDemo() {
 	GoroutineLifecycle()
 	ClosureCaptureIssue()
 }

@@ -1,4 +1,4 @@
-package main
+package patterns
 
 import "fmt"
 
@@ -66,8 +66,4 @@ func RunPipelineDemo() {
 	}
 
 	fmt.Println("Finished Pipeline.")
-}
-
-func main() {
-	RunPipelineDemo()
 }

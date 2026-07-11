@@ -1,4 +1,4 @@
-package main
+package patterns
 
 import (
 	"fmt"
@@ -75,8 +75,4 @@ func RunWorkerPoolDemo() {
 	}
 
 	fmt.Println("All jobs completed and results collected.")
-}
-
-func main() {
-	RunWorkerPoolDemo()
 }
