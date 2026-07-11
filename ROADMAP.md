@@ -103,13 +103,13 @@ Use this document to track your progress through each phase. Check off items as 
 - [x] Completed: `phase-3-advanced/02-reflection/`
 
 ### Generics
-- [ ] Generic type parameters (Go 1.18+)
-- [ ] Generic functions
-- [ ] Type constraints and bounds
-- [ ] Practical generic patterns
-- [ ] When generics help and hurt
-- [ ] Built-in generic constraints
-- [ ] Completed: `phase-3-advanced/03-generics/`
+- [x] Generic type parameters (Go 1.18+)
+- [x] Generic functions
+- [x] Type constraints and bounds
+- [x] Practical generic patterns
+- [x] When generics help and hurt
+- [x] Built-in generic constraints
+- [x] Completed: `phase-3-advanced/03-generics/`
 
 ### Advanced Error Handling
 - [ ] Error wrapping with `fmt.Errorf` and `%w`
