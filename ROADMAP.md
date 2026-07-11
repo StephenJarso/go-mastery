@@ -93,14 +93,14 @@ Use this document to track your progress through each phase. Check off items as 
 - [x] Completed: `phase-3-advanced/01-concurrency/patterns/`
 
 ### Reflection
-- [ ] `reflect` package basics
-- [ ] `reflect.Type` and `reflect.Value`
-- [ ] Inspecting struct fields
-- [ ] Type reflection
-- [ ] Value manipulation through reflection
-- [ ] Method invocation via reflection
-- [ ] When to use reflection
-- [ ] Completed: `phase-3-advanced/02-reflection/`
+- [x] `reflect` package basics
+- [x] `reflect.Type` and `reflect.Value`
+- [x] Inspecting struct fields
+- [x] Type reflection
+- [x] Value manipulation through reflection
+- [x] Method invocation via reflection
+- [x] When to use reflection
+- [x] Completed: `phase-3-advanced/02-reflection/`
 
 ### Generics
 - [ ] Generic type parameters (Go 1.18+)
