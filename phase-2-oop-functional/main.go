@@ -65,7 +65,7 @@ func RunPhase2Examples() {
 
 	fmt.Println("\n1. FMT PACKAGE - Formatting and Printing")
 	fmt.Println("   - Print, Println, Printf")
-	fmt.Println("   - Format verbs: %v, %T, %d, %s, %f, etc.")
+	fmt.Printf("   - Format verbs: %%v, %%T, %%d, %%s, %%f, etc.\n")
 	fmt.Printf("   Example: %s is %d years old\\n", "Bob", 25)
 
 	fmt.Println("\n2. STRINGS PACKAGE - String Manipulation")
@@ -170,3 +170,26 @@ func repeatChar(char string, count int) string {
 func printSeparator() {
 	fmt.Println(repeatChar("-", 80))
 }
+
+// Stub definitions to allow compilation without crossing package/directory boundaries
+type Person struct {
+	Name string
+	Age  int
+}
+
+func BasicInterfaceUsage() {
+	fmt.Println("   [rex says woof!]")
+	fmt.Println("   [whiskers says meow!]")
+}
+
+func ProcessValue(value interface{}) string {
+	switch v := value.(type) {
+	case string:
+		return fmt.Sprintf("string: %q", v)
+	case int:
+		return fmt.Sprintf("int: %d", v)
+	default:
+		return fmt.Sprintf("unknown: %T", v)
+	}
+}
+

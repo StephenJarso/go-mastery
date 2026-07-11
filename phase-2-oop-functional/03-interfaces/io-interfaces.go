@@ -298,8 +298,8 @@ func (lf *LoggedFile) Close() error {
 	return nil
 }
 
-// ComposedInterfaceExample shows implementing multiple interfaces
-func ComposedInterfaceExample() {
+// IOComposedInterfaceExample shows implementing multiple interfaces
+func IOComposedInterfaceExample() {
 	fmt.Println("\n=== Composed Interfaces (Reader + Writer + Closer) ===")
 
 	file := &LoggedFile{name: "data.txt"}
@@ -472,7 +472,7 @@ func IOInterfacesPlayground() {
 	ReadWriterExample()
 	StringerExample()
 	CloserExample()
-	ComposedInterfaceExample()
+	IOComposedInterfaceExample()
 	CopyExample()
 	ChainedReaderExample()
 	BufferedIOExample()

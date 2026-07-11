@@ -81,8 +81,8 @@ func Describe(value interface{}) string {
 	}
 }
 
-// TypeSwitchExample shows how to handle multiple types elegantly
-func TypeSwitchExample() {
+// AssertionTypeSwitchExample shows how to handle multiple types elegantly
+func AssertionTypeSwitchExample() {
 	fmt.Println("\n=== Type Switch Pattern ===")
 
 	values := []interface{}{
@@ -381,7 +381,7 @@ func TypeAssertionPlayground() {
 	fmt.Println("\n========== TYPE ASSERTIONS & TYPE SWITCHES ==========")
 	BasicTypeAssertion()
 	PanicOnFailedAssertion()
-	TypeSwitchExample()
+	AssertionTypeSwitchExample()
 	InterfaceTypeAssertionExample()
 	PracticalTypeAssertionExample()
 	CommaOKExample()
