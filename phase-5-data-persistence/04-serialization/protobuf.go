@@ -2,7 +2,6 @@ package serialization
 
 import (
 	"bytes"
-	"encoding/binary"
 	"fmt"
 )
 

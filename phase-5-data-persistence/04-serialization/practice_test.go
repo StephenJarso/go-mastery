@@ -3,7 +3,6 @@ package serialization
 import (
 	"bytes"
 	"encoding/xml"
-	"reflect"
 	"testing"
 )
 
