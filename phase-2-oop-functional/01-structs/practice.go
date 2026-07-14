@@ -79,8 +79,39 @@ func PracticeExercise1() {
 // 1. BorrowBook(book *Book) - sets Available to false and returns success message
 // 2. ReturnBook(book *Book) - sets Available to true and returns success message
 // 3. BookInfo(book Book) string - returns formatted book information
+func(b *Book) BorrowBook()string{
+	if b.Available==true{
+	b.Available=false
 
+	return fmt.Sprintf("You have succeffully borrowed this book:%v",b.Title)
+	} 
+		return fmt.Sprintf("This book is not available:%v",b.Title)
+	
+}
+//method to return the book
+func(b *Book)ReturnBook()string{
+	b.Available=true
+	return fmt.Sprintf("You have successfully return this book:%v",b.Title)
+}
+//Get book information
+func(b Book)BookInfo()string{
+	return fmt.Sprintf("This is the book info:%+v",b)
+}
 func main() {
+	book2 := Book{
+		ID:        2,
+		Title:     "Go in Action",
+		Author:    "Manning",
+		Pages:     457,
+		Published: 2015,
+		Available: true,
+	}
 	PracticeExercise1()
+	fmt.Println(book2.BorrowBook())
+	fmt.Println(book2.Available)
+	fmt.Println(book2.ReturnBook())
+	fmt.Println(book2.Available)
+	fmt.Println(book2.BookInfo())
+
 	fmt.Println("\n=== Practice Exercise Completed ===")
 }
