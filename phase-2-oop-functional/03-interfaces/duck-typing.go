@@ -1,4 +1,4 @@
-package phase2oopfunctional
+package main
 
 import "fmt"
 
@@ -223,7 +223,7 @@ func DuckTypingWithExtendedInterface() {
 }
 
 // DuckTypingPlayground demonstrates the flexibility of duck typing
-func DuckTypingPlayground() {
+func main() {
 	fmt.Println("\n========== DUCK TYPING EXAMPLES ==========")
 	DuckTypingExample()
 	ComposedInterfaceExample()
