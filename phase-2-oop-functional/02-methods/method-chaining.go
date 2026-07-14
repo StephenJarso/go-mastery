@@ -12,7 +12,7 @@ import (
 type QueryBuilder struct {
 	table  string
 	where  []string
-	select []string
+	select1 []string
 	limit  int
 	offset int
 }
@@ -32,7 +32,7 @@ func (q *QueryBuilder) From(table string) *QueryBuilder {
 // Select specifies columns to select
 // Returns *QueryBuilder to enable chaining
 func (q *QueryBuilder) Select(columns ...string) *QueryBuilder {
-	q.select = columns
+	q.select1 = columns
 	return q // Return receiver for chaining
 }
 
@@ -62,11 +62,11 @@ func (q *QueryBuilder) Offset(offset int) *QueryBuilder {
 func (q *QueryBuilder) Build() string {
 	var query strings.Builder
 
-	if len(q.select) == 0 {
+	if len(q.select1) == 0 {
 		query.WriteString("SELECT *")
 	} else {
 		query.WriteString("SELECT ")
-		query.WriteString(strings.Join(q.select, ", "))
+		query.WriteString(strings.Join(q.select1, ", "))
 	}
 
 	if q.table != "" {
