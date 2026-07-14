@@ -223,11 +223,11 @@ go test -v ./...         # Run all tests recursively
 
 | Phase | Duration | Status |
 |-------|----------|--------|
-| Phase 2 | 2-3 weeks | 📚 Learning |
-| Phase 3 | 3-4 weeks | 📚 Coming Soon |
-| Phase 4 | 4-5 weeks | 📚 Coming Soon |
-| Phase 5 | 3-4 weeks | 📚 Coming Soon |
-| Phase 6 | 2-3 weeks | 📚 Coming Soon |
+| Phase 2 | 2-3 weeks | 🟢 Completed |
+| Phase 3 | 3-4 weeks | 🟢 Completed |
+| Phase 4 | 4-5 weeks | 🟢 Completed |
+| Phase 5 | 3-4 weeks | 🟢 Completed |
+| Phase 6 | 2-3 weeks | 🟢 Completed |
 | Projects | Ongoing | 🚀 Coming Soon |
 
 **Total Time to Advanced:** ~15-20 weeks (3-5 months) of consistent study
