@@ -222,8 +222,13 @@ func DuckTypingWithExtendedInterface() {
 	fmt.Printf("Power: 2^3 = %d\n", scientific.Power(2, 3))
 }
 
+<<<<<<< HEAD
 // DuckTypingPlayground demonstrates the flexibility of duck typing
 func DuckTypingPlayground() {
+=======
+// RunDuckTyping runs all duck typing examples
+func RunDuckTyping() {
+>>>>>>> 6ffc244 (Implement and test interfaces practice exercises)
 	fmt.Println("\n========== DUCK TYPING EXAMPLES ==========")
 	DuckTypingExample()
 	ComposedInterfaceExample()

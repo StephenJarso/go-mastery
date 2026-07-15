@@ -1,4 +1,4 @@
-package main
+package phase2oopfunctional
 
 import "fmt"
 
@@ -289,8 +289,8 @@ func PracticalContainerExample() {
 	}
 }
 
-// EmptyInterfacePlayground runs all empty interface examples
-func main() {
+// RunEmptyInterface runs all empty interface examples
+func RunEmptyInterface() {
 	fmt.Println("\n========== EMPTY INTERFACE (interface{}) EXAMPLES ==========")
 	BasicEmptyInterfaceExample()
 	TypeAssertionExample()
