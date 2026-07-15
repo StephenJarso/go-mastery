@@ -1,3 +1,5 @@
+//go:build ignore
+
 package main
 
 import (
@@ -203,25 +205,20 @@ type Example struct {
 func TagSyntax() {
 	fmt.Println("\n=== Tag Syntax ===")
 
-	fmt.Println(`
-Struct tags use backticks:
-  type MyStruct struct {
-    Field string `json:"field"`
-  }
-
-Multiple tags can be combined:
-  Field string `json:"field" xml:"Field" validate:"required"`
-
-Common tag formats:
-  json:"fieldName"              - JSON marshaling
-  xml:"fieldName"               - XML marshaling
-  json:"fieldName,omitempty"    - Omit if empty
-  json:"-"                       - Ignore field
-  json:"fieldName,string"       - Convert to string
-  
-Tag options are comma-separated:
-  json:"name,omitempty,string"
-`)
+	fmt.Println("Struct tags use backticks:\n" +
+		"  type MyStruct struct {\n" +
+		"    Field string `json:\"field\"`\n" +
+		"  }\n\n" +
+		"Multiple tags can be combined:\n" +
+		"  Field string `json:\"field\" xml:\"Field\" validate:\"required\"`\n\n" +
+		"Common tag formats:\n" +
+		"  json:\"fieldName\"              - JSON marshaling\n" +
+		"  xml:\"fieldName\"               - XML marshaling\n" +
+		"  json:\"fieldName,omitempty\"    - Omit if empty\n" +
+		"  json:\"-\"                       - Ignore field\n" +
+		"  json:\"fieldName,string\"       - Convert to string\n\n" +
+		"Tag options are comma-separated:\n" +
+		"  json:\"name,omitempty,string\"")
 }
 
 // RealWorldExample combines multiple concepts
