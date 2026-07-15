@@ -75,12 +75,45 @@ func PracticeExercise1() {
 }
 
 // CHALLENGE EXERCISE: Add more methods
-// TODO: Create these functions:
 // 1. BorrowBook(book *Book) - sets Available to false and returns success message
 // 2. ReturnBook(book *Book) - sets Available to true and returns success message
 // 3. BookInfo(book Book) string - returns formatted book information
 
+func BorrowBook(book *Book) string {
+	book.Available = false
+	return fmt.Sprintf("You have successfully borrowed %q.", book.Title)
+}
+
+func ReturnBook(book *Book) string {
+	book.Available = true
+	return fmt.Sprintf("You have successfully returned %q.", book.Title)
+}
+
+func BookInfo(book Book) string {
+	status := "available"
+	if !book.Available {
+		status = "borrowed"
+	}
+	return fmt.Sprintf("%q by %s (%d pages) - %s", book.Title, book.Author, book.Pages, status)
+}
+
 func main() {
 	PracticeExercise1()
+	
+	fmt.Println("\n=== Challenge Exercises ===")
+	book := Book{
+		ID:        3,
+		Title:     "Designing Data-Intensive Applications",
+		Author:    "Martin Kleppmann",
+		Pages:     612,
+		Published: 2017,
+		Available: true,
+	}
+	fmt.Println(BookInfo(book))
+	fmt.Println(BorrowBook(&book))
+	fmt.Println(BookInfo(book))
+	fmt.Println(ReturnBook(&book))
+	fmt.Println(BookInfo(book))
+
 	fmt.Println("\n=== Practice Exercise Completed ===")
 }

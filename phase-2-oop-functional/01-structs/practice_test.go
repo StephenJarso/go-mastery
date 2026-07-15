@@ -71,3 +71,46 @@ func TestBookComparison(t *testing.T) {
 		t.Error("expected book1 != book3")
 	}
 }
+
+// TestBookChallengeMethods tests the challenge functions (BorrowBook, ReturnBook, BookInfo)
+func TestBookChallengeMethods(t *testing.T) {
+	book := Book{
+		ID:        3,
+		Title:     "Designing Data-Intensive Applications",
+		Author:    "Martin Kleppmann",
+		Pages:     612,
+		Published: 2017,
+		Available: true,
+	}
+
+	info := BookInfo(book)
+	expectedInfo := `"Designing Data-Intensive Applications" by Martin Kleppmann (612 pages) - available`
+	if info != expectedInfo {
+		t.Errorf("expected info %q, got %q", expectedInfo, info)
+	}
+
+	borrowMsg := BorrowBook(&book)
+	expectedBorrow := `You have successfully borrowed "Designing Data-Intensive Applications".`
+	if borrowMsg != expectedBorrow {
+		t.Errorf("expected borrow msg %q, got %q", expectedBorrow, borrowMsg)
+	}
+	if book.Available {
+		t.Error("expected book.Available to be false after borrow")
+	}
+
+	infoBorrowed := BookInfo(book)
+	expectedBorrowedInfo := `"Designing Data-Intensive Applications" by Martin Kleppmann (612 pages) - borrowed`
+	if infoBorrowed != expectedBorrowedInfo {
+		t.Errorf("expected info %q, got %q", expectedBorrowedInfo, infoBorrowed)
+	}
+
+	returnMsg := ReturnBook(&book)
+	expectedReturn := `You have successfully returned "Designing Data-Intensive Applications".`
+	if returnMsg != expectedReturn {
+		t.Errorf("expected return msg %q, got %q", expectedReturn, returnMsg)
+	}
+	if !book.Available {
+		t.Error("expected book.Available to be true after return")
+	}
+}
+
