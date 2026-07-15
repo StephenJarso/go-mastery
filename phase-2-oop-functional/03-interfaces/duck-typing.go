@@ -1,4 +1,4 @@
-package main
+package phase2oopfunctional
 
 import "fmt"
 
@@ -222,8 +222,8 @@ func DuckTypingWithExtendedInterface() {
 	fmt.Printf("Power: 2^3 = %d\n", scientific.Power(2, 3))
 }
 
-// DuckTypingPlayground demonstrates the flexibility of duck typing
-func main() {
+// RunDuckTyping runs all duck typing examples
+func RunDuckTyping() {
 	fmt.Println("\n========== DUCK TYPING EXAMPLES ==========")
 	DuckTypingExample()
 	ComposedInterfaceExample()

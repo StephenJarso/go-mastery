@@ -108,12 +108,12 @@ type Reader interface {
 	Read() string
 }
 
-// StringReader reads from a string
-type StringReader struct {
+// SimpleStringReader reads from a string
+type SimpleStringReader struct {
 	content string
 }
 
-func (sr StringReader) Read() string {
+func (sr SimpleStringReader) Read() string {
 	return sr.content
 }
 
@@ -129,8 +129,8 @@ func (fr FileReader) Read() string {
 // GetReaderType uses type assertion to identify the concrete type
 func GetReaderType(r Reader) string {
 	switch r.(type) {
-	case StringReader:
-		return "StringReader"
+	case SimpleStringReader:
+		return "SimpleStringReader"
 	case FileReader:
 		return "FileReader"
 	default:
@@ -138,9 +138,9 @@ func GetReaderType(r Reader) string {
 	}
 }
 
-// ExtractIfStringReader safely extracts a StringReader
-func ExtractIfStringReader(r Reader) (StringReader, bool) {
-	sr, ok := r.(StringReader)
+// ExtractIfSimpleStringReader safely extracts a SimpleStringReader
+func ExtractIfSimpleStringReader(r Reader) (SimpleStringReader, bool) {
+	sr, ok := r.(SimpleStringReader)
 	return sr, ok
 }
 
@@ -149,17 +149,17 @@ func InterfaceTypeAssertionExample() {
 	fmt.Println("\n=== Type Assertions on Interfaces ===")
 
 	readers := []Reader{
-		StringReader{content: "Hello from string"},
+		SimpleStringReader{content: "Hello from string"},
 		FileReader{filename: "data.txt"},
-		StringReader{content: "Another string"},
+		SimpleStringReader{content: "Another string"},
 	}
 
 	for i, r := range readers {
 		fmt.Printf("[%d] Type: %s\n", i, GetReaderType(r))
 		fmt.Printf("      Content: %s\n", r.Read())
 
-		// Extract if it's a StringReader
-		if sr, ok := ExtractIfStringReader(r); ok {
+		// Extract if it's a SimpleStringReader
+		if sr, ok := ExtractIfSimpleStringReader(r); ok {
 			fmt.Printf("      Confirmed StringReader with: %q\n", sr.content)
 		}
 		fmt.Println()
@@ -324,8 +324,8 @@ func AssertReader(value interface{}) {
 	fmt.Printf("Value is a Reader: %s\n", reader.Read())
 
 	// Then check specific type
-	if sr, ok := value.(StringReader); ok {
-		fmt.Printf("  Specifically a StringReader: %q\n", sr.content)
+	if sr, ok := value.(SimpleStringReader); ok {
+		fmt.Printf("  Specifically a SimpleStringReader: %q\n", sr.content)
 	} else if fr, ok := value.(FileReader); ok {
 		fmt.Printf("  Specifically a FileReader: %s\n", fr.filename)
 	}
@@ -335,7 +335,7 @@ func AssertReader(value interface{}) {
 func AssertionChainExample() {
 	fmt.Println("\n=== Assertion Chain ===")
 
-	sr := StringReader{content: "test content"}
+	sr := SimpleStringReader{content: "test content"}
 	fr := FileReader{filename: "important.txt"}
 	var notReader interface{} = 42
 
