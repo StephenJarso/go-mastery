@@ -1,4 +1,4 @@
-package phase2oopfunctional
+package main
 
 import (
 	"bufio"
@@ -462,7 +462,7 @@ func FileIOExample() {
 }
 
 // IOInterfacesPlayground runs all io interface examples
-func IOInterfacesPlayground() {
+func main() {
 	fmt.Println("\n========== STANDARD LIBRARY I/O INTERFACES ==========")
 	StringAsReader()
 	BytesAsReader()
