@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 // PRACTICE EXERCISES for Phase 2.2: Methods & Receivers
 
@@ -25,6 +28,16 @@ func (c Car) GetInfo() string {
 	return fmt.Sprintf("%d %s %s with %.0f miles", c.Year, c.Brand, c.Model, c.Miles)
 }
 
+// GetAge returns age of car (current year - model year)
+func (c Car) GetAge() int {
+	return time.Now().Year() - c.Year
+}
+
+// NeedsService returns true if miles > 100000
+func (c Car) NeedsService() bool {
+	return c.Miles > 100000
+}
+
 // Exercise 2: Pointer Receiver Methods
 // Create methods that MODIFY the receiver
 
@@ -38,6 +51,16 @@ func (c *Car) Drive(miles float64) {
 	if miles > 0 {
 		c.Miles += miles
 	}
+}
+
+// Service resets miles to 0
+func (c *Car) Service() {
+	c.Miles = 0
+}
+
+// UpdateYear updates the year of the car
+func (c *Car) UpdateYear(year int) {
+	c.Year = year
 }
 
 // Exercise 3: Method Chaining
@@ -63,6 +86,24 @@ func (cb *CarBuilder) WithBrand(brand string) *CarBuilder {
 	return cb
 }
 
+// WithModel sets the car's model
+func (cb *CarBuilder) WithModel(model string) *CarBuilder {
+	cb.car.Model = model
+	return cb
+}
+
+// WithYear sets the car's year
+func (cb *CarBuilder) WithYear(year int) *CarBuilder {
+	cb.car.Year = year
+	return cb
+}
+
+// WithMiles sets the car's miles
+func (cb *CarBuilder) WithMiles(miles float64) *CarBuilder {
+	cb.car.Miles = miles
+	return cb
+}
+
 func (cb *CarBuilder) Build() *Car {
 	return cb.car
 }
@@ -81,13 +122,18 @@ func PracticeExercises() {
 	}
 
 	fmt.Printf("Car: %s\n", myCar.GetInfo())
-	// TODO: Call GetAge() and NeedsService() methods
+	fmt.Printf("Car Age: %d years\n", myCar.GetAge())
+	fmt.Printf("Needs service? %v\n", myCar.NeedsService())
 
 	// Exercise 2: Pointer Receiver Methods
 	fmt.Println("\n--- Exercise 2: Pointer Receiver Methods ---")
 	myCar.Drive(6000)
 	fmt.Printf("After driving 6000 miles: %s\n", myCar.GetInfo())
-	// TODO: Call Service() and UpdateYear() methods
+	fmt.Printf("Needs service after drive? %v\n", myCar.NeedsService())
+	myCar.Service()
+	fmt.Printf("After service: %s\n", myCar.GetInfo())
+	myCar.UpdateYear(2018)
+	fmt.Printf("After updating year: %s\n", myCar.GetInfo())
 
 	// Exercise 3: Method Chaining
 	fmt.Println("\n--- Exercise 3: Method Chaining ---")
