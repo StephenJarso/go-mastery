@@ -45,10 +45,6 @@ func (s *TaskServer) Close() {
 	s.workerPool.Shutdown()
 }
 
-func (s *TaskServer) HandleTasks(w http.ResponseWriter, r *http.Header) {
-	// To be registered with router
-}
-
 func main() {
 	server := NewTaskServer()
 	defer server.Close()
