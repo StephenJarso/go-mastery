@@ -29,12 +29,12 @@ type Result struct {
 func worker(id int, jobs <-chan Job, results chan<- Result) {
 	for job := range jobs {
 		fmt.Printf("Worker %d: Started processing job %d\n", id, job.ID)
-		
+
 		// Simulate computation time
 		time.Sleep(50 * time.Millisecond)
-		
+
 		output := job.Value * 2
-		
+
 		fmt.Printf("Worker %d: Finished job %d\n", id, job.ID)
 		results <- Result{Job: job, Output: output, Worker: id}
 	}
@@ -61,7 +61,7 @@ func RunWorkerPoolDemo() {
 		jobs <- Job{ID: j, Value: j * 10}
 	}
 	fmt.Println("Sent all jobs to workers.")
-	
+
 	// Close the jobs channel to signal to the workers that no more jobs are coming.
 	// This causes their 'for range jobs' loops to terminate.
 	close(jobs)
@@ -70,7 +70,7 @@ func RunWorkerPoolDemo() {
 	// Since we know exactly how many jobs we sent, we can receive that exact number of results.
 	for r := 1; r <= numJobs; r++ {
 		res := <-results
-		fmt.Printf("Result collected: Job %d processed by Worker %d -> Output = %d\n", 
+		fmt.Printf("Result collected: Job %d processed by Worker %d -> Output = %d\n",
 			res.Job.ID, res.Worker, res.Output)
 	}
 

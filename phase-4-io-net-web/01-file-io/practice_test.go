@@ -1,11 +1,10 @@
 package fileio
 
 import (
-	"testing"
 	"os"
 	"path/filepath"
+	"testing"
 )
-
 
 func TestFilterLogs(t *testing.T) {
 	tmpDir := t.TempDir()

@@ -5,7 +5,6 @@ import (
 	"golang.org/x/exp/constraints"
 )
 
-
 func MapSlice[T any, U any](slice []T, f func(T) U) []U {
 	res := make([]U, len(slice))
 	for i, v := range slice {

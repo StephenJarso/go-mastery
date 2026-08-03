@@ -1,12 +1,10 @@
 package concurrency
 
 import (
-	"testing"
-	"context"
 	"sync"
+	"testing"
 	"time"
 )
-
 
 func TestConcurrentSum(t *testing.T) {
 	res := ConcurrentSum(100, 4)

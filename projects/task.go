@@ -17,7 +17,7 @@ type Task struct {
 	ID          string     `json:"id"`
 	Title       string     `json:"title"`
 	Description string     `json:"description"`
-	Payload     string     `json:"payload"`     // Data for processing
+	Payload     string     `json:"payload"` // Data for processing
 	Status      TaskStatus `json:"status"`
 	CreatedAt   time.Time  `json:"created_at"`
 	UpdatedAt   time.Time  `json:"updated_at"`

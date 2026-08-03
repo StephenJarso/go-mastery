@@ -19,7 +19,7 @@ type User struct {
 // InspectVariables shows how to reflect on basic variables.
 func InspectVariables() {
 	fmt.Println("=== Inspecting Variables with Reflection ===")
-	
+
 	x := 42
 	y := "hello"
 	z := []int{1, 2, 3}
@@ -67,10 +67,10 @@ func InspectStruct(obj interface{}) {
 
 	// Iterate over the struct fields
 	for i := 0; i < t.NumField(); i++ {
-		field := t.Field(i)      // returns reflect.StructField
-		value := v.Field(i)      // returns reflect.Value
-		
-		fmt.Printf("Field %d: Name = %-6s, Type = %-8s, Value = %-15v\n", 
+		field := t.Field(i) // returns reflect.StructField
+		value := v.Field(i) // returns reflect.Value
+
+		fmt.Printf("Field %d: Name = %-6s, Type = %-8s, Value = %-15v\n",
 			i, field.Name, field.Type, value.Interface())
 
 		// Access tags

@@ -19,9 +19,9 @@ type Address struct {
 // Employee demonstrates embedding an Address struct
 // This is Go's way of "inheriting" fields from Address
 type Employee struct {
-	ID        int
-	Name      string
-	Address   Address // Embedded struct (not anonymous)
+	ID         int
+	Name       string
+	Address    Address // Embedded struct (not anonymous)
 	Department string
 }
 
@@ -29,10 +29,10 @@ type Employee struct {
 // When you embed a struct without a field name, it's called anonymous embedding
 // The fields of the embedded struct become directly accessible
 type Student struct {
-	ID    int
-	Name  string
+	ID      int
+	Name    string
 	Address // Anonymous embedding - fields become accessible directly
-	GPA   float64
+	GPA     float64
 }
 
 // Company demonstrates multiple embedding levels
@@ -157,8 +157,8 @@ func MethodPromotion() {
 	}
 
 	// Car doesn't define Start() or Stop(), but inherits them from Vehicle
-	fmt.Println(car.Start())  // Promoted method
-	fmt.Println(car.Stop())   // Promoted method
+	fmt.Println(car.Start()) // Promoted method
+	fmt.Println(car.Stop())  // Promoted method
 
 	// This is a form of method inheritance through embedding
 }
@@ -195,7 +195,7 @@ type Address2 struct {
 }
 
 type Person struct {
-	Name    string
+	Name     string
 	Address2 // Anonymous embedding
 }
 
@@ -208,8 +208,7 @@ type Company2 struct {
 func ComplexEmbedding() {
 	fmt.Println("\n=== Complex Multi-Level Embedding ===")
 
-
-company := Company2{
+	company := Company2{
 		Name: "Tech Corp",
 		CEO: Person{
 			Name: "Diana",
@@ -247,7 +246,7 @@ type ReadWriter interface {
 }
 
 type File struct {
-	name string
+	name    string
 	content string
 }
 

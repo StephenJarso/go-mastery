@@ -1,11 +1,10 @@
 package phase2oopfunctional
 
 import (
-	"io"
 	"errors"
 	"fmt"
+	"io"
 )
-
 
 var _ io.Reader
 var _ = errors.New

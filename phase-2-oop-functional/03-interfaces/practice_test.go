@@ -1,10 +1,9 @@
 package phase2oopfunctional
 
 import (
-	"testing"
 	"io"
+	"testing"
 )
-
 
 func TestStringReader(t *testing.T) {
 	sr := NewStringReader("test")

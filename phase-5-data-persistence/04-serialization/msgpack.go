@@ -12,7 +12,7 @@ import (
 // It is widely used in high-performance cache caches (like Redis) and RPC communication.
 
 type LogEntry struct {
-	Level     string    `msgpack:"level"`     // Msgpack tag mapping
+	Level     string    `msgpack:"level"` // Msgpack tag mapping
 	Message   string    `msgpack:"message"`
 	Timestamp time.Time `msgpack:"timestamp"`
 	Host      string    `msgpack:"host,omitempty"`

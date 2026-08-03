@@ -65,7 +65,7 @@ func (wp *WorkerPool) processTask(workerID int, task *projects.Task) {
 
 	// Simulate work duration based on payload length (min 100ms)
 	workDuration := time.Duration(100+len(task.Payload)*10) * time.Millisecond
-	
+
 	// Create context with timeout for task processing
 	taskCtx, taskCancel := context.WithTimeout(wp.ctx, 2*time.Second)
 	defer taskCancel()

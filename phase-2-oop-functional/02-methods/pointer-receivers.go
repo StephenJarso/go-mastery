@@ -89,13 +89,13 @@ func PointerReceiverModification() {
 	fmt.Printf("Initial: $%.2f\n", account.Balance)
 
 	// Multiple modifications
-	account.Deposit(200)   // 500 + 200 = 700
+	account.Deposit(200) // 500 + 200 = 700
 	fmt.Printf("After deposit: $%.2f\n", account.Balance)
 
-	account.Withdraw(150)  // 700 - 150 = 550
+	account.Withdraw(150) // 700 - 150 = 550
 	fmt.Printf("After withdrawal: $%.2f\n", account.Balance)
 
-	account.Deposit(100)   // 550 + 100 = 650
+	account.Deposit(100) // 550 + 100 = 650
 	fmt.Printf("After second deposit: $%.2f\n", account.Balance)
 }
 

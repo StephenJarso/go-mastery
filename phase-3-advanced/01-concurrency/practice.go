@@ -2,10 +2,9 @@ package concurrency
 
 import (
 	"context"
-	"sync"
 	"errors"
+	"sync"
 )
-
 
 var _ = context.Background
 var _ sync.Mutex

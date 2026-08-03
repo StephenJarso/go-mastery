@@ -1,12 +1,11 @@
 package solutions
 
 import (
-	"os"
 	"bufio"
-	"strings"
+	"os"
 	"path/filepath"
+	"strings"
 )
-
 
 func FilterLogs(srcPath, destPath, keyword string) error {
 	src, err := os.Open(srcPath)

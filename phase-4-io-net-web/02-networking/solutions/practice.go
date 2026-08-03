@@ -4,7 +4,6 @@ import (
 	"net"
 )
 
-
 func StartEchoTCPServer(addr string, stopChan chan struct{}) error {
 	listener, err := net.Listen("tcp", addr)
 	if err != nil {

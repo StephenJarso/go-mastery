@@ -1,11 +1,10 @@
 package advanced_testing
 
 import (
-	"testing"
 	"net/http"
 	"net/http/httptest"
+	"testing"
 )
-
 
 func TestFetchRemoteData(t *testing.T) {
 	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {

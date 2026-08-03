@@ -4,7 +4,6 @@ import (
 	"testing"
 )
 
-
 func TestFilter(t *testing.T) {
 	nums := []int{1, 2, 3, 4, 5}
 	res := Filter(nums, func(n int) bool { return n%2 == 1 })

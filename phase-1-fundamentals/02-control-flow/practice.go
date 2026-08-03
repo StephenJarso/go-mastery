@@ -4,7 +4,6 @@ import (
 	"strconv"
 )
 
-
 var _ = strconv.Itoa
 
 // Exercise 1: FizzBuzz

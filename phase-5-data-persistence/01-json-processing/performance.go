@@ -22,7 +22,7 @@ func StreamEncodeUser(w io.Writer, u User) error {
 	encoder := json.NewEncoder(w)
 	// Optionally disable HTML escaping if encoding URL values or strings containing <, >, &
 	encoder.SetEscapeHTML(false)
-	
+
 	err := encoder.Encode(u)
 	if err != nil {
 		return fmt.Errorf("failed to stream encode user: %w", err)
@@ -34,7 +34,7 @@ func StreamEncodeUser(w io.Writer, u User) error {
 func StreamDecodeUser(r io.Reader) (User, error) {
 	var u User
 	decoder := json.NewDecoder(r)
-	
+
 	err := decoder.Decode(&u)
 	if err != nil {
 		return User{}, fmt.Errorf("failed to stream decode user: %w", err)
@@ -47,16 +47,16 @@ func StreamDecodeUser(r io.Reader) (User, error) {
 func DecodeWithNumericPrecision(jsonData string) (map[string]interface{}, error) {
 	reader := bytes.NewReader([]byte(jsonData))
 	decoder := json.NewDecoder(reader)
-	
+
 	// CRITICAL: UseNumber causes the decoder to unmarshal numbers into the interface{}
 	// as a json.Number type instead of a float64.
 	decoder.UseNumber()
-	
+
 	var result map[string]interface{}
 	err := decoder.Decode(&result)
 	if err != nil {
 		return nil, fmt.Errorf("failed to decode with precision: %w", err)
 	}
-	
+
 	return result, nil
 }

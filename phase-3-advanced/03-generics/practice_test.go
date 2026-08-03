@@ -4,7 +4,6 @@ import (
 	"testing"
 )
 
-
 func TestMapSlice(t *testing.T) {
 	s := []int{1, 2, 3}
 	res := MapSlice(s, func(x int) string { return string(rune('A' + x - 1)) })

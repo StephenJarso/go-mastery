@@ -65,9 +65,9 @@ go-mastery/
 │   ├── 04-error-handling-advanced/
 │   └── README.md
 │
-├── phase-4-io-networking/             # File I/O, HTTP, Web Development
+├── phase-4-io-net-web/              # File I/O, HTTP, Web Development
 │   ├── 01-file-io/
-│   ├── 02-networking-basics/
+│   ├── 02-networking/
 │   ├── 03-http-web/
 │   ├── 04-frameworks/
 │   ├── 05-rest-api/
@@ -89,6 +89,9 @@ go-mastery/
     ├── 01-cli-tool/
     ├── 02-rest-api/
     ├── 03-concurrent-system/
+    ├── 04-scheduler/
+    ├── 05-metrics/
+    ├── 06-event-stream/
     └── README.md
 ```
 
@@ -239,7 +242,7 @@ go test -v ./...         # Run all tests recursively
 | Phase 4 | 4-5 weeks | 📚 Coming Soon |
 | Phase 5 | 3-4 weeks | 📚 Coming Soon |
 | Phase 6 | 2-3 weeks | 📚 Coming Soon |
-| Projects | Ongoing | 🚀 Coming Soon |
+| Projects | Ongoing | 🟢 In Progress |
 
 **Total Time to Advanced:** ~15-20 weeks (3-5 months) of consistent study
 

@@ -4,7 +4,6 @@ import (
 	"testing"
 )
 
-
 func TestCarBuilder(t *testing.T) {
 	car := NewCarBuilder().Brand("Tesla").Model("Model 3").Speed(150).Build()
 	if car.Brand != "Tesla" || car.Model != "Model 3" || car.Speed != 150 {

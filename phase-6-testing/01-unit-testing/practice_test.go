@@ -4,7 +4,6 @@ import (
 	"testing"
 )
 
-
 type MockNotifier struct {
 	SentMsg string
 	SendErr error

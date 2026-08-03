@@ -4,7 +4,6 @@ import (
 	"errors"
 )
 
-
 var _ = errors.New
 
 // Exercise 1: Collection Filter

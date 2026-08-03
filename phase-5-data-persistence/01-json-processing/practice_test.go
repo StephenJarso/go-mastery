@@ -1,11 +1,10 @@
 package jsonprocessing
 
 import (
+	"encoding/json"
 	"testing"
 	"time"
-	"encoding/json"
 )
-
 
 func TestParseConfig(t *testing.T) {
 	payload := `{"app_name":"GoApp","port":8080}`

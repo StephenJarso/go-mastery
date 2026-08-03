@@ -4,7 +4,6 @@ import (
 	"strings"
 )
 
-
 var _ strings.Builder
 
 // Exercise 1: String Concatenation using standard +

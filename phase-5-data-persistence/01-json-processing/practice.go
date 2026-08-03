@@ -2,10 +2,9 @@ package jsonprocessing
 
 import (
 	"encoding/json"
-	"time"
 	"errors"
+	"time"
 )
-
 
 var _ = json.Marshal
 var _ = time.Now

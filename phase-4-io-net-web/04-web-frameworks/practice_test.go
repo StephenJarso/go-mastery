@@ -1,11 +1,10 @@
 package webframeworks
 
 import (
-	"testing"
 	"net/http"
 	"net/http/httptest"
+	"testing"
 )
-
 
 func TestGinPing(t *testing.T) {
 	r := SetupGinPing()

@@ -5,7 +5,6 @@ import (
 	"encoding/gob"
 )
 
-
 var _ = bytes.NewBuffer
 var _ = gob.NewEncoder
 

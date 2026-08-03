@@ -1,7 +1,5 @@
 package methods
 
-
-
 type Car struct {
 	Brand string
 	Model string

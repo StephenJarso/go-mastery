@@ -5,7 +5,6 @@ import (
 	"reflect"
 )
 
-
 func GetStructFields(s interface{}) []string {
 	val := reflect.ValueOf(s)
 	if val.Kind() == reflect.Ptr {

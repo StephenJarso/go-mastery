@@ -34,13 +34,13 @@ func CreateUserAndProfile(db *gorm.DB, name, email, bio string) (*User, error) {
 // In GORM, associations are lazy-loaded. To fetch them, we use Preload.
 func GetUserWithAssociations(db *gorm.DB, userID uint) (*User, error) {
 	var u User
-	
+
 	// Preload eager-loads the relational models in secondary queries.
 	err := db.Preload("Profile").Preload("Posts").Preload("Posts.Tags").First(&u, userID).Error
 	if err != nil {
 		return nil, fmt.Errorf("failed to get user: %w", err)
 	}
-	
+
 	return &u, nil
 }
 

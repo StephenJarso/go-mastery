@@ -1,10 +1,9 @@
 package main
 
 import (
-	"testing"
 	"encoding/json"
+	"testing"
 )
-
 
 func TestBorrowBook(t *testing.T) {
 	book := Book{ID: 1, Title: "Go Book", Author: "Author", Available: true}

@@ -1,10 +1,9 @@
 package restapi
 
 import (
-	"net/http"
 	"github.com/go-chi/chi/v5"
+	"net/http"
 )
-
 
 var _ = http.StatusOK
 var _ = chi.NewRouter

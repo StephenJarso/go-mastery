@@ -4,7 +4,6 @@ import (
 	"strconv"
 )
 
-
 func FizzBuzz(start, end int) []string {
 	result := make([]string, 0, end-start+1)
 	for i := start; i <= end; i++ {

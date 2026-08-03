@@ -1,11 +1,10 @@
 package solutions
 
 import (
-	"io"
 	"errors"
 	"fmt"
+	"io"
 )
-
 
 type StringReader struct {
 	content string

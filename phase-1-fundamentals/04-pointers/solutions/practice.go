@@ -2,7 +2,6 @@ package solutions
 
 import "errors"
 
-
 type Student struct {
 	Name  string
 	Grade float64

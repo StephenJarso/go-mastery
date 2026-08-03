@@ -5,7 +5,6 @@ import (
 	"reflect"
 )
 
-
 var _ = errors.New
 var _ = reflect.TypeOf
 

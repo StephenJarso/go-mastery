@@ -29,7 +29,7 @@ type DatabaseError struct {
 
 // Error implements the error interface.
 func (e *DatabaseError) Error() string {
-	return fmt.Sprintf("database error: query %q failed: %v (at %s)", 
+	return fmt.Sprintf("database error: query %q failed: %v (at %s)",
 		e.Query, e.Err, e.Timestamp.Format(time.RFC3339))
 }
 

@@ -4,7 +4,6 @@ import (
 	"testing"
 )
 
-
 func TestConvertFahrenheitToCelsius(t *testing.T) {
 	tests := []struct {
 		input    float64

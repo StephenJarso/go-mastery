@@ -8,11 +8,11 @@ import (
 // Use this to explore all the concepts covered in Phase 2
 
 func RunPhase2Examples() {
-	fmt.Println("\n" + string(make([]byte, 80)))
-	fmt.Println("=" + string(make([]byte, 78)) + "=")
+	fmt.Println("\n" + repeatChar("=", 80))
+	fmt.Println("=" + repeatChar("=", 78) + "=")
 	fmt.Println("|" + centerText("PHASE 2: OBJECT-ORIENTED & FUNCTIONAL CONCEPTS", 78) + "|")
 	fmt.Println("|" + centerText("Comprehensive Go Learning Examples", 78) + "|")
-	fmt.Println("=" + string(make([]byte, 78)) + "=")
+	fmt.Println("=" + repeatChar("=", 78) + "=")
 
 	// Phase 2.1: Structs
 	fmt.Println("\n" + repeatChar("=", 80))
@@ -106,9 +106,9 @@ func RunPhase2Examples() {
 	fmt.Println(repeatChar("=", 80))
 
 	summary := []struct {
-		topic      string
-		key        string
-		status     string
+		topic  string
+		key    string
+		status string
 	}{
 		{"Structs", "01-structs", "✅"},
 		{"Methods", "02-methods", "✅"},
@@ -192,4 +192,3 @@ func ProcessValue(value interface{}) string {
 		return fmt.Sprintf("unknown: %T", v)
 	}
 }
-

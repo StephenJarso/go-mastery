@@ -25,7 +25,7 @@ func ConnectDatabase(dsn string) (*sql.DB, error) {
 
 	// 2. Configure connection pool parameters.
 	// Connection pooling is built directly into sql.DB and is fully thread-safe.
-	
+
 	// SetMaxOpenConns sets the maximum number of open connections to the database.
 	// For SQLite, having multiple concurrent write connections can cause locks,
 	// so a low limit (or 1 for exclusive write locking) is typical, though read concurrency is fine.

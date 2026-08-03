@@ -4,7 +4,6 @@ import (
 	"strings"
 )
 
-
 func ConcatenateStringsPlus(strs []string) string {
 	res := ""
 	for _, s := range strs {

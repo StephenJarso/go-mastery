@@ -5,7 +5,6 @@ import (
 	"errors"
 )
 
-
 type Account struct {
 	ID      int
 	Owner   string

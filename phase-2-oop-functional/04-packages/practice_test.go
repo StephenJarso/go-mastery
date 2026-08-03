@@ -3,9 +3,7 @@ package phase2packages
 import (
 	"testing"
 	"time"
-	"encoding/json"
 )
-
 
 func TestFormatURLPath(t *testing.T) {
 	res := FormatURLPath("Hello, World! Go 101")
