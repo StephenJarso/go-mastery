@@ -144,10 +144,10 @@ func IgnoreFieldTag() {
 
 // XMLTags demonstrates XML struct tags
 type Article struct {
-	ID    int    `xml:"id,attr"`    // attr makes it an XML attribute
-	Title string `xml:"title"`      // element
-	Body  string `xml:"body"`       // element
-	Tags  []string `xml:"tag"`      // repeated element
+	ID    int      `xml:"id,attr"` // attr makes it an XML attribute
+	Title string   `xml:"title"`   // element
+	Body  string   `xml:"body"`    // element
+	Tags  []string `xml:"tag"`     // repeated element
 }
 
 func XMLTags() {
@@ -168,9 +168,9 @@ func XMLTags() {
 
 // CustomTagOptions shows how to parse custom tags
 type Product struct {
-	Name  string `validate:"required" json:"name"`
+	Name  string  `validate:"required" json:"name"`
 	Price float64 `validate:"min=0" json:"price"`
-	Stock int    `validate:"min=0,max=1000" json:"stock"`
+	Stock int     `validate:"min=0,max=1000" json:"stock"`
 }
 
 func ParseCustomTags() {
@@ -194,10 +194,10 @@ func ParseCustomTags() {
 type Example struct {
 	// Tags must use backticks
 	Field1 string `json:"field1"`
-	
+
 	// You can have multiple tags
 	Field2 string `json:"field2" xml:"Field2" validate:"required"`
-	
+
 	// Spaces don't matter
 	Field3 string `json:"field3" xml:"Field3"`
 }

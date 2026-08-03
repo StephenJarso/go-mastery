@@ -4,7 +4,6 @@ import (
 	"sync"
 )
 
-
 type SafeMap struct {
 	mu   sync.RWMutex
 	data map[string]string

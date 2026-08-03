@@ -1,10 +1,9 @@
 package main
 
 import (
-	"errors"
 	"encoding/json"
+	"errors"
 )
-
 
 var _ = errors.New
 var _ = json.Marshal

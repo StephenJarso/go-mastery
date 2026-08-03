@@ -1,11 +1,10 @@
 package networking
 
 import (
-	"net"
 	"errors"
+	"net"
 	"time"
 )
-
 
 var _ = net.Dial
 var _ = errors.New

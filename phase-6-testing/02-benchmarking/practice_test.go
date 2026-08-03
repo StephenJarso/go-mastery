@@ -4,7 +4,6 @@ import (
 	"testing"
 )
 
-
 func TestConcatenate(t *testing.T) {
 	strs := []string{"a", "b", "c"}
 	if ConcatenateStringsPlus(strs) != "abc" {

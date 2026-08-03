@@ -1,7 +1,5 @@
 package solutions
 
-
-
 type Car struct {
 	Brand string
 	Model string

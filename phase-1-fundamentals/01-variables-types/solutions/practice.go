@@ -6,7 +6,6 @@ import (
 	"strconv"
 )
 
-
 func ConvertFahrenheitToCelsius(f float64) (string, error) {
 	if f < -459.67 {
 		return "", errors.New("temperature is below absolute zero")

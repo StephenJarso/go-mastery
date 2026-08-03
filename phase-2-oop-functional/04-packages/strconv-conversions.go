@@ -30,9 +30,9 @@ func StringToIntegerExample() {
 	}
 
 	// Different bases
-	hex, _ := strconv.ParseInt("FF", 16, 64) // hex
+	hex, _ := strconv.ParseInt("FF", 16, 64)  // hex
 	bin, _ := strconv.ParseInt("1010", 2, 64) // binary
-	oct, _ := strconv.ParseInt("777", 8, 64) // octal
+	oct, _ := strconv.ParseInt("777", 8, 64)  // octal
 
 	fmt.Printf("Hex FF: %d\n", hex)
 	fmt.Printf("Binary 1010: %d\n", bin)
@@ -105,9 +105,9 @@ func FloatToStringExample() {
 	// syntax: FormatFloat(f float64, fmt byte, prec, bitSize int) string
 	// fmt: 'f' (decimal), 'e' (scientific), 'g' (general)
 
-	decimal := strconv.FormatFloat(num, 'f', 2, 64) // 2 decimal places
+	decimal := strconv.FormatFloat(num, 'f', 2, 64)    // 2 decimal places
 	scientific := strconv.FormatFloat(num, 'e', 4, 64) // scientific notation
-	general := strconv.FormatFloat(num, 'g', 4, 64) // general format
+	general := strconv.FormatFloat(num, 'g', 4, 64)    // general format
 
 	fmt.Printf("Decimal ('f', 2): %s\n", decimal)
 	fmt.Printf("Scientific ('e', 4): %s\n", scientific)

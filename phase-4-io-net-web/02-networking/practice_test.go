@@ -5,7 +5,6 @@ import (
 	"time"
 )
 
-
 func TestTCPEcho(t *testing.T) {
 	addr := "127.0.0.1:9099"
 	stop := make(chan struct{})

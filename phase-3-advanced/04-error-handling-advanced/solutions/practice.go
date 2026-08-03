@@ -5,7 +5,6 @@ import (
 	"fmt"
 )
 
-
 type ValidationError struct {
 	Field string
 	Msg   string

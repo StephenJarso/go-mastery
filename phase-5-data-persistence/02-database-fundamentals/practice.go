@@ -5,7 +5,6 @@ import (
 	"errors"
 )
 
-
 var _ = sql.Open
 var _ = errors.New
 

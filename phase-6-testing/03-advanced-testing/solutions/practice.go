@@ -1,11 +1,10 @@
 package solutions
 
 import (
-	"net/http"
-	"io"
 	"errors"
+	"io"
+	"net/http"
 )
-
 
 func FetchRemoteData(url string) (string, error) {
 	resp, err := http.Get(url)
@@ -13,7 +12,7 @@ func FetchRemoteData(url string) (string, error) {
 		return "", err
 	}
 	defer resp.Body.Close()
-	
+
 	if resp.StatusCode != http.StatusOK {
 		return "", errors.New("bad status: " + resp.Status)
 	}

@@ -1,11 +1,10 @@
 package httpweb
 
 import (
-	"testing"
 	"net/http"
 	"net/http/httptest"
+	"testing"
 )
-
 
 func TestHelloHandler(t *testing.T) {
 	req := httptest.NewRequest("GET", "/", nil)
@@ -22,7 +21,7 @@ func TestHelloHandler(t *testing.T) {
 
 func TestAuthMiddleware(t *testing.T) {
 	handler := AuthMiddleware(http.HandlerFunc(HelloHandler))
-	
+
 	req := httptest.NewRequest("GET", "/", nil)
 	rr := httptest.NewRecorder()
 	handler.ServeHTTP(rr, req)

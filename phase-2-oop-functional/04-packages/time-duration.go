@@ -81,8 +81,7 @@ func ParseTime() {
 	layout := "2006-01-02"
 	timeStr := "2024-07-10"
 
-
-t, err := time.Parse(layout, timeStr)
+	t, err := time.Parse(layout, timeStr)
 	if err != nil {
 		fmt.Printf("Error: %v\n", err)
 	} else {
@@ -159,8 +158,7 @@ func UnixTime() {
 func TimeComparison() {
 	fmt.Println("\n=== Time Comparison ===")
 
-
-t1 := time.Now()
+	t1 := time.Now()
 	time.Sleep(100 * time.Millisecond)
 	t2 := time.Now()
 

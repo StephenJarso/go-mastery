@@ -4,10 +4,9 @@ import (
 	"testing"
 )
 
-
 func TestGobSerialization(t *testing.T) {
 	item := CacheItem{Key: "user-10", Value: []byte("active-session")}
-	
+
 	b, err := GobSerialize(item)
 	if err != nil {
 		t.Fatalf("failed to serialize: %v", err)

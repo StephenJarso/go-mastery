@@ -5,7 +5,6 @@ import (
 	"fmt"
 )
 
-
 var _ = errors.New
 var _ = fmt.Println
 

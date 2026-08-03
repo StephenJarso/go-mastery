@@ -2,10 +2,9 @@ package solutions
 
 import (
 	"encoding/json"
-	"time"
 	"errors"
+	"time"
 )
-
 
 type Config struct {
 	AppName string `json:"app_name"`

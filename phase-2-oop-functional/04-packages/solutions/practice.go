@@ -1,18 +1,17 @@
 package solutions
 
 import (
-	"strings"
-	"strconv"
-	"time"
 	"errors"
+	"strconv"
+	"strings"
+	"time"
 )
-
 
 func FormatURLPath(title string) string {
 	lower := strings.ToLower(title)
 	fields := strings.Fields(lower)
 	joined := strings.Join(fields, "-")
-	
+
 	// Remove non-alphanumeric except hyphen
 	var sb strings.Builder
 	for _, r := range joined {

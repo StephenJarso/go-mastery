@@ -1,10 +1,9 @@
 package errors_advanced
 
 import (
-	"testing"
 	"fmt"
+	"testing"
 )
-
 
 func TestValidationError(t *testing.T) {
 	e := ValidationError{Field: "Email", Msg: "invalid format"}

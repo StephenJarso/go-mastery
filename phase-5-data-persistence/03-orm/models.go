@@ -16,7 +16,7 @@ type User struct {
 	Name  string  `gorm:"type:varchar(100);not null"`
 	Email *string `gorm:"type:varchar(100);uniqueIndex"` // Pointer allows storing NULL in database
 	Role  string  `gorm:"type:varchar(20);default:'user'"`
-	
+
 	// One-to-One relationship
 	// GORM will automatically look for Profile's foreign key (UserID)
 	Profile Profile `gorm:"constraint:OnUpdate:CASCADE,OnDelete:SET NULL;"`
@@ -44,8 +44,8 @@ type Post struct {
 }
 
 type Tag struct {
-	ID        uint           `gorm:"primaryKey"`
-	Name      string         `gorm:"uniqueIndex;not null"`
+	ID        uint   `gorm:"primaryKey"`
+	Name      string `gorm:"uniqueIndex;not null"`
 	CreatedAt time.Time
 	DeletedAt gorm.DeletedAt `gorm:"index"`
 }

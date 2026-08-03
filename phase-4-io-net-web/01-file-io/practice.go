@@ -1,12 +1,11 @@
 package fileio
 
 import (
-	"os"
 	"bufio"
-	"strings"
+	"os"
 	"path/filepath"
+	"strings"
 )
-
 
 var _ = os.Open
 var _ = bufio.NewScanner

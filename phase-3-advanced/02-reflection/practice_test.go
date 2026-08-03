@@ -4,7 +4,6 @@ import (
 	"testing"
 )
 
-
 type Dummy struct {
 	Name string
 	Age  int

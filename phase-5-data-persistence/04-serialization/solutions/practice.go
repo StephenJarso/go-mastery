@@ -5,7 +5,6 @@ import (
 	"encoding/gob"
 )
 
-
 type CacheItem struct {
 	Key   string
 	Value []byte

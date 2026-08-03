@@ -18,7 +18,7 @@ import (
 // Note: If you run this with the race detector enabled, it will print a warning and terminate.
 func DemonstrateRaceCondition() {
 	fmt.Println("=== Data Race Demonstration ===")
-	
+
 	var sharedCounter int
 	var wg sync.WaitGroup
 
@@ -58,13 +58,13 @@ func DemonstrateDeadlock() {
 		defer wg.Done()
 		mu1.Lock()
 		fmt.Println("Goroutine 1: Acquired Lock 1")
-		
+
 		time.Sleep(10 * time.Millisecond) // force switch
 
 		fmt.Println("Goroutine 1: Waiting for Lock 2...")
 		mu2.Lock() // blocks indefinitely if Goroutine 2 holds mu2
 		fmt.Println("Goroutine 1: Acquired Lock 2")
-		
+
 		mu2.Unlock()
 		mu1.Unlock()
 	}()
@@ -91,7 +91,7 @@ func DemonstrateDeadlock() {
 	// the whole program will crash with "fatal error: all goroutines are asleep - deadlock!".
 	// To let this script finish gracefully for demonstration, we will run the wait in a goroutine
 	// and use a timeout select block.
-	
+
 	done := make(chan struct{})
 	go func() {
 		wg.Wait()

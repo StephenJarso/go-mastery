@@ -396,7 +396,7 @@ func BufferedIOExample() {
 
 // TransformReader wraps a reader and transforms data
 type TransformReader struct {
-	reader io.Reader
+	reader    io.Reader
 	transform func([]byte) []byte
 }
 

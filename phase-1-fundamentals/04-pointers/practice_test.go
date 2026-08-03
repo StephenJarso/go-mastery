@@ -4,7 +4,6 @@ import (
 	"testing"
 )
 
-
 func TestSwap(t *testing.T) {
 	x, y := 5, 10
 	Swap(&x, &y)

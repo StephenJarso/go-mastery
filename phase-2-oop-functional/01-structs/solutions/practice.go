@@ -1,11 +1,10 @@
 package solutions
 
 import (
-	"errors"
 	"encoding/json"
+	"errors"
 	"fmt"
 )
-
 
 type Book struct {
 	ID        int

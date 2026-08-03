@@ -1,12 +1,11 @@
 package restapi
 
 import (
-	"testing"
+	"bytes"
 	"net/http"
 	"net/http/httptest"
-	"bytes"
+	"testing"
 )
-
 
 func TestItemRouter(t *testing.T) {
 	r := SetupItemRouter()

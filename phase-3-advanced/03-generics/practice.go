@@ -5,7 +5,6 @@ import (
 	"golang.org/x/exp/constraints"
 )
 
-
 var _ = errors.New
 
 // Exercise 1: Generic Map Slice

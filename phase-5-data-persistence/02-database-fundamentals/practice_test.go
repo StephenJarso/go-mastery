@@ -1,11 +1,10 @@
 package dbfundamentals
 
 import (
-	"testing"
 	"database/sql"
 	_ "github.com/glebarez/go-sqlite"
+	"testing"
 )
-
 
 func TestDatabaseFundamentals(t *testing.T) {
 	db, err := sql.Open("sqlite", ":memory:")

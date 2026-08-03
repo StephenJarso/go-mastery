@@ -106,9 +106,9 @@ func RunPhase2Examples() {
 	fmt.Println(repeatChar("=", 80))
 
 	summary := []struct {
-		topic      string
-		key        string
-		status     string
+		topic  string
+		key    string
+		status string
 	}{
 		{"Structs", "01-structs", "✅"},
 		{"Methods", "02-methods", "✅"},
@@ -192,4 +192,3 @@ func ProcessValue(value interface{}) string {
 		return fmt.Sprintf("unknown: %T", v)
 	}
 }
-

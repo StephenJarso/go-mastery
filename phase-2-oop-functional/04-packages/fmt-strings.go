@@ -36,9 +36,9 @@ func FmtFormatVerbs() {
 	fmt.Println("\n=== Format Verbs ===")
 
 	// General verbs
-	fmt.Printf("%%v (value): %v\n", 42)        // value in default format
-	fmt.Printf("%%T (type): %T\n", 42)         // type of value
-	fmt.Printf("%%#v (repr): %#v\n", "test")   // Go syntax representation
+	fmt.Printf("%%v (value): %v\n", 42)      // value in default format
+	fmt.Printf("%%T (type): %T\n", 42)       // type of value
+	fmt.Printf("%%#v (repr): %#v\n", "test") // Go syntax representation
 
 	// String verbs
 	str := "hello"
@@ -73,8 +73,8 @@ func FmtWidth() {
 
 	// Zero padding for numbers
 	fmt.Printf("|%05d|\n", 42)
-	fmt.Printf("|%+d|\n", 42)  // show sign
-	fmt.Printf("|% d|\n", 42)  // space for positive
+	fmt.Printf("|%+d|\n", 42) // show sign
+	fmt.Printf("|% d|\n", 42) // space for positive
 }
 
 // ===== STRINGS PACKAGE =====

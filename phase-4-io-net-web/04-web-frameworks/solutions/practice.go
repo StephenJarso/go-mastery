@@ -1,11 +1,10 @@
 package solutions
 
 import (
-	"net/http"
 	"github.com/gin-gonic/gin"
 	"github.com/labstack/echo/v4"
+	"net/http"
 )
-
 
 func SetupGinPing() *gin.Engine {
 	gin.SetMode(gin.ReleaseMode)

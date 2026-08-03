@@ -1,11 +1,10 @@
 package orm
 
 import (
-	"testing"
-	"gorm.io/gorm"
 	"github.com/glebarez/sqlite"
+	"gorm.io/gorm"
+	"testing"
 )
-
 
 func TestORM(t *testing.T) {
 	db, err := gorm.Open(sqlite.Open(":memory:"), &gorm.Config{})

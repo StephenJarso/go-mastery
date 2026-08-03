@@ -20,8 +20,8 @@ type Person struct {
 
 // Company is another struct to demonstrate multiple structs
 type Company struct {
-	Name     string
-	Location string
+	Name      string
+	Location  string
 	Employees int
 }
 
@@ -169,12 +169,11 @@ func StructSize() {
 
 	//var p Person
 	//fmt.Printf("Size of Person struct: %d bytes\n", unsafe(len([]byte{}))) // Would use unsafe.Sizeof in production
-	fmt.Printf("Size of string field: %d bytes\n", 16)                    // strings are 16 bytes
-	fmt.Printf("Size of int field: %d bytes\n", 8)                       // int64 is 8 bytes on 64-bit systems
+	fmt.Printf("Size of string field: %d bytes\n", 16) // strings are 16 bytes
+	fmt.Printf("Size of int field: %d bytes\n", 8)     // int64 is 8 bytes on 64-bit systems
 }
 
 // Using unsafe to show actual sizes
-
 
 func StructSizeWithUnsafe() {
 	fmt.Println("\n=== Struct Size (with unsafe) ===")
@@ -185,23 +184,25 @@ func StructSizeWithUnsafe() {
 	fmt.Printf("Size of Age field: %d bytes\n", unsafe.Sizeof(p.Age))
 	fmt.Printf("Size of Email field: %d bytes\n", unsafe.Sizeof(p.Email))
 }
+
 //To understand more about value Receiver and pointer receiver,here is a small code to explain the difference
 //value receiver- method gets a copy of the struct
 //Pointer receiver- the method gets the actual struct(can modify it)
 
 // 1.Value Receiver
-type Person1 struct{
+type Person1 struct {
 	Name string
-	Age int
+	Age  int
 }
+
 // Her  p is a copy.If you change p.Nmae inside Greet()the original is untouched.
-func(p Person1)Greet()string{
-return "Hi,I'm "+p.Name
+func (p Person1) Greet() string {
+	return "Hi,I'm " + p.Name
 }
-func(p Person1) Birthday(){
+func (p Person1) Birthday() {
 	p.Age++
 }
-func(p *Person1) Birthday1(){
+func (p *Person1) Birthday1() {
 	p.Age++
 }
 func main() {
@@ -219,13 +220,11 @@ func main() {
 
 	bob := Person1{
 		Name: "bob",
-		Age: 25,
+		Age:  25,
 	}
 	bob.Birthday()
-	fmt.Println(bob.Age)// 25 -nothing changed
+	fmt.Println(bob.Age) // 25 -nothing changed
 
 	bob.Birthday1()
-	fmt.Println(bob.Age)// 26 - changed
+	fmt.Println(bob.Age) // 26 - changed
 }
-
-

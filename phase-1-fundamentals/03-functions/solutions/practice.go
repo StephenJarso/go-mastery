@@ -2,8 +2,6 @@ package solutions
 
 import "errors"
 
-
-
 func Filter(numbers []int, predicate func(int) bool) []int {
 	var result []int
 	for _, n := range numbers {
