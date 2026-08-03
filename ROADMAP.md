@@ -280,15 +280,33 @@ Use this document to track your progress through each phase. Check off items as 
 - [x] Testing (concurrency and race condition testing)
 - [x] Performance optimization (worker tuning)
 
+### Project 4: Task Scheduler
+- [ ] Design (cron-like scheduling with intervals and recurrence)
+- [ ] Implementation (scheduler with retry and backoff)
+- [ ] Testing (schedule accuracy and retry logic)
+- [ ] Documentation (problem statement and guide)
+
+### Project 5: Metrics Collector & Dashboard
+- [ ] Design (counter, gauge, histogram metric types)
+- [ ] Implementation (in-memory storage with time-windowed retention)
+- [ ] Testing (aggregation accuracy and concurrency safety)
+- [ ] Documentation (problem statement and guide)
+
+### Project 6: Event Stream Processor
+- [ ] Design (pub/sub with topic routing and backpressure)
+- [ ] Implementation (EventBus with wildcard matching)
+- [ ] Testing (delivery guarantees and throughput)
+- [ ] Documentation (problem statement and guide)
+
 ---
 
 ## Summary Statistics
 
-**Total Items to Complete:** 185
+**Total Items to Complete:** 197
 **Items Completed:** 185
-**Completion Percentage:** 100%
+**Completion Percentage:** 93.9%
 
-**Phases Completed:** 6/6 (plus Phase 7 Projects)
+**Phases Completed:** 6/6 (plus Phase 7 Projects, Phase 8 In Progress)
 **Estimated Total Time:** 14-20 weeks
 
 ---
