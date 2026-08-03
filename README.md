@@ -65,9 +65,9 @@ go-mastery/
 │   ├── 04-error-handling-advanced/
 │   └── README.md
 │
-├── phase-4-io-networking/             # File I/O, HTTP, Web Development
+├── phase-4-io-net-web/              # File I/O, HTTP, Web Development
 │   ├── 01-file-io/
-│   ├── 02-networking-basics/
+│   ├── 02-networking/
 │   ├── 03-http-web/
 │   ├── 04-frameworks/
 │   ├── 05-rest-api/
