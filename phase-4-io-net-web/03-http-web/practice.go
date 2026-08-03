@@ -12,6 +12,12 @@ type ContextKey string
 
 const RequestIDKey ContextKey = "request_id"
 
+// PRACTICE EXERCISE #0: Hello Handler
+// Implement a simple handler that responds with "Hello, World!".
+func HelloHandler(w http.ResponseWriter, r *http.Request) {
+	// TODO: Implement
+}
+
 // PRACTICE EXERCISE #1: API Token Authentication Middleware
 // Implement a middleware that validates an API Token passed in the Authorization header.
 //   - It should check for the "Authorization" header in the format: "Bearer <token>".

@@ -1,7 +1,6 @@
 package concurrency
 
 import (
-	"context"
 	"sync"
 	"testing"
 	"time"
