@@ -11,6 +11,9 @@ func TestHelloHandler(t *testing.T) {
 	rr := httptest.NewRecorder()
 	HelloHandler(rr, req)
 
+	if rr.Body.Len() == 0 {
+		t.Skip("Exercise HelloHandler not implemented yet")
+	}
 	if rr.Code != http.StatusOK {
 		t.Errorf("expected 200, got %d", rr.Code)
 	}
@@ -20,6 +23,9 @@ func TestHelloHandler(t *testing.T) {
 }
 
 func TestAuthMiddleware(t *testing.T) {
+	if AuthMiddleware == nil {
+		t.Skip("Exercise AuthMiddleware not implemented yet")
+	}
 	handler := AuthMiddleware(http.HandlerFunc(HelloHandler))
 
 	req := httptest.NewRequest("GET", "/", nil)

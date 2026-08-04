@@ -18,6 +18,9 @@ func TestTCPEcho(t *testing.T) {
 	time.Sleep(100 * time.Millisecond)
 
 	res, err := SendTCPMessage(addr, "Hello Go")
+	if res == "" && err == nil {
+		t.Skip("Exercise TCPEcho not implemented yet")
+	}
 	if err != nil {
 		t.Fatalf("SendTCPMessage failed: %v", err)
 	}

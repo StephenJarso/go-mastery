@@ -18,6 +18,12 @@ func HelloHandler(w http.ResponseWriter, r *http.Request) {
 	// TODO: Implement
 }
 
+// AuthMiddleware checks for "Authorization" header matching "secret-token".
+func AuthMiddleware(next http.Handler) http.Handler {
+	// TODO: Implement
+	return nil
+}
+
 // PRACTICE EXERCISE #1: API Token Authentication Middleware
 // Implement a middleware that validates an API Token passed in the Authorization header.
 //   - It should check for the "Authorization" header in the format: "Bearer <token>".
