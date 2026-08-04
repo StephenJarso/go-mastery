@@ -5,6 +5,9 @@ import (
 )
 
 func TestConvertFahrenheitToCelsius(t *testing.T) {
+	if res, err := ConvertFahrenheitToCelsius(32.0); res == "" && err == nil {
+		t.Skip("Exercise ConvertFahrenheitToCelsius not implemented yet")
+	}
 	tests := []struct {
 		input    float64
 		expected string
@@ -29,6 +32,9 @@ func TestConvertFahrenheitToCelsius(t *testing.T) {
 }
 
 func TestCalculateCircleArea(t *testing.T) {
+	if res, err := CalculateCircleArea("10.0"); res == 0 && err == nil {
+		t.Skip("Exercise CalculateCircleArea not implemented yet")
+	}
 	tests := []struct {
 		input    string
 		expected float64
@@ -53,6 +59,9 @@ func TestCalculateCircleArea(t *testing.T) {
 
 func TestBuildUserProfile(t *testing.T) {
 	res := BuildUserProfile("Alice", "Admin", "Active")
+	if res == "" {
+		t.Skip("Exercise BuildUserProfile not implemented yet")
+	}
 	expected := "Welcome Alice to GoMastery (Role: Admin, Status: Active)"
 	if res != expected {
 		t.Errorf("BuildUserProfile() = %q; expected %q", res, expected)

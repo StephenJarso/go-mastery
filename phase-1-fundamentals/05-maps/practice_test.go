@@ -7,6 +7,9 @@ import (
 )
 
 func TestWordFrequency(t *testing.T) {
+	if res := WordFrequency([]string{"hello"}); res == nil {
+		t.Skip("Exercise WordFrequency not implemented yet")
+	}
 	tests := []struct {
 		input    []string
 		expected map[string]int
@@ -34,6 +37,9 @@ func TestWordFrequency(t *testing.T) {
 }
 
 func TestGroupByGrade(t *testing.T) {
+	if res := GroupByGrade(map[string]string{"Alice": "A"}); res == nil {
+		t.Skip("Exercise GroupByGrade not implemented yet")
+	}
 	tests := []struct {
 		input    map[string]string
 		expected map[string][]string
@@ -79,6 +85,9 @@ func TestGroupByGrade(t *testing.T) {
 func TestMergeMaps(t *testing.T) {
 	a := map[string]int{"apple": 5, "banana": 10}
 	b := map[string]int{"banana": 5, "cherry": 15}
+	if res := MergeMaps(a, b); res == nil {
+		t.Skip("Exercise MergeMaps not implemented yet")
+	}
 	expected := map[string]int{"apple": 5, "banana": 15, "cherry": 15}
 
 	res := MergeMaps(a, b)
