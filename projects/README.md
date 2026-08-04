@@ -81,6 +81,15 @@ cd ../02-rest-api && go test -v
 
 # Run tests for Concurrent worker pool
 cd ../03-concurrent-system && go test -v
+
+# Run tests for Task Scheduler
+cd ../04-scheduler && go test -v
+
+# Run tests for Metrics Collector
+cd ../05-metrics && go test -v
+
+# Run tests for Event Stream Processor
+cd ../06-event-stream && go test -v
 ```
 
 ---
